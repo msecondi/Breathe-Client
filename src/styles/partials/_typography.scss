@@ -1,0 +1,56 @@
+//bold
+@font-face {
+    font-family: "AlbertSans";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../../assets/fonts/Albert_Sans/static/AlbertSans-Bold.ttf") format('ttf');
+}
+
+//semibold
+@font-face {
+    font-family: "AlbertSans";
+    font-style: normal;
+    font-weight: 600;
+    src: url("../../assets/fonts/Albert_Sans/static/AlbertSans-SemiBold.ttf") format('ttf');
+}
+
+//regular
+@font-face {
+    font-family: "AlbertSans";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../../assets/fonts/Albert_Sans/static/AlbertSans-Regular.ttf") format('ttf');
+    // font-optical-sizing: auto;
+}
+
+//light
+@font-face {
+    font-family: "AlbertSans";
+    font-style: normal;
+    font-weight: 300;
+    src: url("../../assets/fonts/Albert_Sans/static/AlbertSans-Light.ttf") format('ttf');
+}
+
+
+
+//bold&italic
+@font-face {
+    font-family: "AlbertSans";
+    font-style: italic;
+    font-weight: 700;
+    src: url("../../assets/fonts/Albert_Sans/static/AlbertSans-BoldItalic.ttf") format('ttf');
+}
+//italic
+@font-face {
+    font-family: "AlbertSans";
+    font-style: italic;
+    font-weight: 400;
+    src: url("../../assets/fonts/Albert_Sans/static/AlbertSans-Italic.ttf") format('ttf');
+}
+//light&italic
+@font-face {
+    font-family: "AlbertSans";
+    font-style: italic;
+    font-weight: 300;
+    src: url("../../assets/fonts/Albert_Sans/static/AlbertSans-LightItalic.ttf") format('ttf');
+}

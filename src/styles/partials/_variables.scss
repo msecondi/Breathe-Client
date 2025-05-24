@@ -1,6 +1,12 @@
-.albert-sans-main {
-  font-family: "Albert Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
+@use "./typography" as *;
+
+// primary font
+$primary-font: "AlbertSans", sans-serif;
+
+// primary colours
+$calm-main: rgb(219, 237, 255); //almost blue
+
+$calm-accent: rgb(53, 151, 248);
+
+
+//secondary colours
