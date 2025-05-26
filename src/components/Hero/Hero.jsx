@@ -29,6 +29,7 @@ const Hero = () => {
             <h1 className="hero__text">
                 <span className="hero__text-span">{displayedText}</span>
             </h1>
+            <p className="hero__subheader">Being <span>human</span> isn’t just biology. It’s a <span>practice.</span></p>
         </div>
     );
 }
