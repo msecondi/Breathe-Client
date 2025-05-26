@@ -1,48 +1,29 @@
 @use "../../styles/styles.scss" as *;
 @use "../../styles/partials/variables.scss" as *;
 
-// .hero {
-//     display: flex;
-//     margin: 1rem 0;
-
-//     &__banner {
-
-//     }
-// }
-
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
-
 .hero {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
-//   background: linear-gradient(to bottom, #ffffff, #eef4ff);
   &__text {
     font-size: 4rem;
     font-weight: 300;
-    color: $calm-main;
+    color: $calm-black;
     font-style: italic;
     font-family: $primary-font;
     position: relative;
   }
   &__text-span {
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     animation: breathe 8s infinite;
 
   }
-//   &__text-cursor {
-//     display: inline-block;
-//     width: 2px;
-//     height: 1.2em;
-//     background-color: rgba(50, 50, 100, 0.5);
-//     margin-left: 5px;
-//     animation: breathe 4s infinite;
-//   }
 }
 
 @keyframes breathe {
-    0%{ opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
+    0%{ opacity: 0; }
+    45% { opacity: 1; }
+    55% { opacity: 1; }
+    100% { opacity: 0; }
 }

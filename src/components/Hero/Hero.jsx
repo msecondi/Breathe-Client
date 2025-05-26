@@ -4,46 +4,30 @@ import { useEffect, useState } from "react";
 
 const Hero = () => {
 
-    // const words = ['connection', 'genuity', 'belonging', 'calm', 'presence', 'feeling'];
+    const words = ['connection', 'genuity', 'patience', 'belonging', 'calm', 'presence', 'honesty', 'feeling', 'reflect'];
 
     // const [index, setIndex] = useState(0);
     const [displayedText, setDisplayedText] = useState('');
 
-    // useEffect(() => {
-    //     //reset displayed text
+    useEffect(() => {
+        let i = 0;
+        const updateWord = () => {
+            setDisplayedText(words[i]);
+            i = (i + 1) % words.length; //to create an infinite loop. When is at the end, it resets to 0
+        };
 
-    //     //display one letter at a time with an interval
+        // Immediately show first word
+        updateWord();
 
-    //     //pause
+        const interval = setInterval(updateWord, 8000);
 
-
-    // }, [index])
-
-    // useEffect(() => {
-    // let i = 0;
-    // setDisplayedText('');
-    // const word = words[index];
-    // const typing = setInterval(() => {
-    //     setDisplayedText(word.slice(0, i + 1));
-    //     i++;
-    //     if (i === word.length) clearInterval(typing);
-    // }, 150);
-
-    // const timeout = setTimeout(() => {
-    //     setIndex((prev) => (prev + 1) % words.length);
-    // }, 4000);
-
-    // return () => {
-    //     clearInterval(typing);
-    //     clearTimeout(timeout);
-    // };
-    // }, [index]);
+        return () => clearInterval(interval); // Clean up on unmount
+    }, []);
 
     return (
         <div className="hero">
             <h1 className="hero__text">
-                <span className="hero__text-span">Patience</span>
-                {/* <span className="hero__text-cursor" /> */}
+                <span className="hero__text-span">{displayedText}</span>
             </h1>
         </div>
     );
