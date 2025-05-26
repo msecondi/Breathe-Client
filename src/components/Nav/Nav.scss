@@ -1,8 +1,13 @@
+@use "../../styles/partials/variables" as *;
 .main-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 1rem;
+    margin: 1rem 0;
+    padding: 0 2rem;
+    // border-bottom: 1px solid $calm-accent;
+    // border-radius: 0 0 0 1rem;
+    // box-shadow: 0 0 1rem;
 
     &__list {
         list-style: none;
@@ -10,6 +15,7 @@
         padding: 0px;
     }
     &__list-item {
-        margin: 0 1rem;
+        font-size: 1rem;
+        margin: 0 0 0 1rem;
     }
 }

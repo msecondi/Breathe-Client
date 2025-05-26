@@ -1,15 +1,17 @@
+//scss
+import "./QuoteList.scss"
+
 import { useState, useEffect } from "react";
 
 //components
-import Quotes from "../Quotes/Quotes.jsx";
+import Quote from "../Quote/Quote.jsx";
 
 //axios
 import axios from "axios";
-const baseURL = import.meta.env.VITE_BACKEND_URL || 8080;
+const baseURL = import.meta.env.VITE_BACKEND_URL || "http://localhost:8080";
 
-const QuotesCard = () => { 
+const QuoteList = ({isActive}) => { 
     const [ quotes, setQuotes ] = useState([]);
-
 
     const fetchQuotes = async () => {
         try {
@@ -27,14 +29,14 @@ const QuotesCard = () => {
 
     return (
         <>
-            <section>
-                {quotes && quotes.length ? 
-                    quotes.map((quote, index) => {
-                        <Quotes quote={quote} key={index}/>
-                    }) :
+            <section className={`list ${isActive ? 'fade-in-list' : 'fade-out-list'}`} >
+                {quotes.length ? 
+                    quotes.map(quote => (
+                        <Quote quote={quote} key={quote.id}/>
+                    )) :
                     <div>Loading quotes...</div>}
             </section>
         </>
     )
 }
-export default QuotesCard;
+export default QuoteList;

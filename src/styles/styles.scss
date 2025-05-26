@@ -3,10 +3,10 @@
 @use "./partials/_mixins" as *;
 @use "./partials/_typography" as *;
 
-* {
-    font-family: $primary-font;
-    background-color: rgb(245, 245, 245); //a bit darker than white
-}
+// * {
+//     font-family: $primary-font;
+//     background-color: rgb(245, 245, 245); //a bit darker than white
+// }
 h1 {
     font-size: 32px;
     line-height: 32px;
@@ -39,6 +39,9 @@ body {
     line-height: 15px;
     font-weight: 400;
     margin: 0;
+    font-family: $primary-font;
+    background-color: $calm-body;
+    // background-color: $calm-main;
     @include tablet {
         font-size: 20px;
         line-height: 26px;

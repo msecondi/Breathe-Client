@@ -25,7 +25,7 @@ const Hero = () => {
     }, []);
 
     return (
-        <div className="hero">
+        <div className="hero" id="overlay">
             <h1 className="hero__text">
                 <span className="hero__text-span">{displayedText}</span>
             </h1>

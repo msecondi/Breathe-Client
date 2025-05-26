@@ -1,0 +1,20 @@
+@use "../../styles/styles.scss" as *;
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/mixins" as *;
+
+.list {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+
+.fade-in-list {
+  opacity: 0;
+  transform: translateY(-2rem);
+  animation: fadeIn 3s ease forwards;
+}
+.fade-out-list {
+    opacity: 1;
+    transform: translateY(0px);
+    animation: fadeOut 1.5s ease forwards;
+}

@@ -6,13 +6,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 14rem;
   width: 100vw;
+  margin-bottom: 4rem;
   &__text {
     font-size: 4rem;
     font-weight: 300;
-    color: $calm-black;
+    color: $calm-accent;
     font-style: italic;
-    font-family: $primary-font;
+    font-family: fangsong;
     position: relative;
   }
   &__text-span {
