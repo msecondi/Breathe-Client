@@ -8,3 +8,10 @@
         @content;
     }
 }
+
+@keyframes breathe {
+    0%{ opacity: 0; }
+    45% { opacity: 1; }
+    55% { opacity: 1; }
+    100% { opacity: 0; }
+}

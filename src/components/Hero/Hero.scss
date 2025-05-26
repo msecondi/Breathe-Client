@@ -1,5 +1,6 @@
 @use "../../styles/styles.scss" as *;
 @use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/mixins" as *;
 
 .hero {
   display: flex;
@@ -17,13 +18,5 @@
   &__text-span {
     transition: all 0.3s ease;
     animation: breathe 8s infinite;
-
   }
-}
-
-@keyframes breathe {
-    0%{ opacity: 0; }
-    45% { opacity: 1; }
-    55% { opacity: 1; }
-    100% { opacity: 0; }
 }

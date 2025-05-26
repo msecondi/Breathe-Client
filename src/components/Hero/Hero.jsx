@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 const Hero = () => {
 
-    const words = ['connection', 'genuity', 'patience', 'belonging', 'calm', 'presence', 'honesty', 'feeling', 'reflect'];
+    const words = ['connection', 'genuity', 'patience', 'belonging', 'calm', 'presence', 'honesty', 'feeling', 'reflect', 'ponder'];
 
     // const [index, setIndex] = useState(0);
     const [displayedText, setDisplayedText] = useState('');
