@@ -34,7 +34,7 @@ const QuoteList = ({isActive}) => {
                     quotes.map(quote => (
                         <Quote quote={quote} key={quote.id}/>
                     )) :
-                    <div>Loading quotes...</div>}
+                    <div>loading inspiration...</div>}
             </section>
         </>
     )

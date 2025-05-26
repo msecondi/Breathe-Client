@@ -7,14 +7,14 @@ const Nav = () => {
         <>  
             <nav className="main-nav">
                 <h2 className="main-nav__logo">
-                    Breathe
+                    breathe
                 </h2>
                 <ul className="main-nav__list">
                     <li className="main-nav__list-item">
-                        Home
+                        home
                     </li>
                     <li className="main-nav__list-item">
-                        Release
+                        release
                     </li>
                 </ul>
             </nav>

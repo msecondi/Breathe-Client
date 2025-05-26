@@ -1,7 +1,5 @@
 import "./InspireMeBtn.scss"
 
-import { useState } from "react";
-
 const InspireMeBtn = ({isActive, setIsActive}) => {
     const handleClick = () => {
         setIsActive(prev => !prev);
@@ -10,7 +8,7 @@ const InspireMeBtn = ({isActive, setIsActive}) => {
         <>
             <div className="inspire-btn-container">
                 <button onClick={handleClick} className={`inspire-btn ${isActive ? "inspire-btn--active" : ""}`}>
-                    <span className="inspire-btn__text">{isActive ? "Inspired" : "Inspire Me"}</span>
+                    <span className="inspire-btn__text">{isActive ? "inspired" : "inspire me"}</span>
                 </button>
             </div>
         </>
