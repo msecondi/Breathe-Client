@@ -103,13 +103,12 @@
 
     &__btn {
         font-size: 1rem;
-        // font-family: "AlbertSans";
         width: 5rem;
         padding: 6px 8px;
         color: $calm-main;
         background-color: $calm-accent;
-        border: solid 3px $calm-accent;
-        border-radius: 8px;
+        border: none;
+        border-radius: 1rem;
         cursor: pointer;
         @include tablet {
             border-radius: 14px;

@@ -7,6 +7,17 @@
     justify-content: center;
     flex-flow: row wrap;
 }
+.list-wrapper {
+  overflow: hidden;
+  transition: max-height 4s ease, opacity 4s ease;
+  max-height: 100rem; // assume this is taller than your list ever will be
+  opacity: 1;
+
+  &--hidden {
+    max-height: 0;
+    opacity: 0;
+  }
+}
 
 .fade-in-list {
   opacity: 0;

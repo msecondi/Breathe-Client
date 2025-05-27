@@ -1,3 +1,28 @@
 @use "../../styles/styles.scss" as *;
 @use "../../styles/partials/variables.scss" as *;
 @use "../../styles/partials/mixins" as *;
+
+.reflection {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+    margin-top: 4rem;
+    
+    background-color: $calm-main;
+    &__header {
+        // color: $calm-black;
+        margin: 4rem;
+    }
+    &__sub-header {
+        // color: $calm-black;
+        margin: 2rem 0;
+        text-align: center;
+        width: 70%;
+        font-weight: 400;
+    }
+    &__sub-header span {
+        font-style: italic;
+        color: $calm-accent;
+    }
+}

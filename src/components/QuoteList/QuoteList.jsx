@@ -29,13 +29,15 @@ const QuoteList = ({isActive}) => {
 
     return (
         <>
-            <section className={`list ${isActive ? 'fade-in-list' : 'fade-out-list'}`} >
-                {quotes.length ? 
-                    quotes.map(quote => (
-                        <Quote quote={quote} key={quote.id}/>
-                    )) :
-                    <div>loading inspiration...</div>}
-            </section>
+            <div className={`list-wrapper ${!isActive ? 'list-wrapper--hidden' : ''}`}>
+                <section className='list'>
+                    {quotes.length ? 
+                        quotes.map(quote => (
+                            <Quote quote={quote} key={quote.id}/>
+                        )) :
+                        <div>loading inspiration...</div>}
+                </section>
+            </div>
         </>
     )
 }

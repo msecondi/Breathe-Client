@@ -18,8 +18,9 @@ const Reflection = () => {
 
     return (
         <>
-            <section>
-                <h2>what does being human mean to you?</h2>
+            <section className="reflection">
+                <h1 className="reflection__header">a moment to reflect</h1>
+                <h3 className="reflection__sub-header">what does being human mean to <span>you?</span></h3>
                 <ReflectionForm />
             </section>
         </>
