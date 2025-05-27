@@ -6,7 +6,6 @@ import axios from "axios";
 const baseURL = import.meta.env.VITE_BACKEND_URL || "http://localhost:8080";
 
 const ReflectionForm = () => {
-    // const [statusMessage, setStatusMessage] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const [isReflectionFocused, setIsReflectionFocused] = useState(false); // for overall feel and user focus
     

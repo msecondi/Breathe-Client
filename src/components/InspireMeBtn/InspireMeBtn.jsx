@@ -1,8 +1,11 @@
 import "./InspireMeBtn.scss"
 
-const InspireMeBtn = ({isActive, setIsActive}) => {
+const InspireMeBtn = ({isActive, setIsActive, scrollToSection}) => {
     const handleClick = () => {
         setIsActive(prev => !prev);
+        
+        if(!isActive)
+            scrollToSection();
     }
     return (
         <>

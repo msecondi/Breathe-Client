@@ -10,7 +10,7 @@ import Quote from "../Quote/Quote.jsx";
 import axios from "axios";
 const baseURL = import.meta.env.VITE_BACKEND_URL || "http://localhost:8080";
 
-const QuoteList = ({isActive}) => { 
+const QuoteList = ({isActive, scrollToRef}) => { 
     const [ quotes, setQuotes ] = useState([]);
 
     const fetchQuotes = async () => {
@@ -30,7 +30,7 @@ const QuoteList = ({isActive}) => {
     return (
         <>
             <div className={`list-wrapper ${!isActive ? 'list-wrapper--hidden' : ''}`}>
-                <section className='list'>
+                <section className='list' ref={scrollToRef}>
                     {quotes.length ? 
                         quotes.map(quote => (
                             <Quote quote={quote} key={quote.id}/>
