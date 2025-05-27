@@ -1,0 +1,135 @@
+@use "../../styles/styles.scss" as *;
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/mixins" as *;
+
+#form {
+    display: flex;
+    flex-direction: column;
+    margin: 3rem 1rem;
+    @include tablet {
+        margin: 3rem 1.5rem 1.5rem;
+    }
+    @include desktop {
+        margin: 4rem 14rem;
+    }
+    & label {
+        // font-family: "AlbertSans";
+        font-size: 16px;
+        margin-bottom: 1rem;
+        @include tablet {
+            font-size: 20px;
+            margin-bottom: 0.5rem;
+        }
+        @include desktop {
+            font-size: 22px;
+        }
+    }
+}
+
+.form {
+    &__name {
+        font-size: 16px;
+        // font-family: "AlbertSans";
+        padding: 0 1rem;
+        margin-bottom: 16px;
+        border: 2px solid $calm-black;
+        border-radius: 8px;
+        background-color: white;
+        height: 36px;
+        margin-bottom: 2rem;
+        @include tablet {
+            border-radius: 12px;
+            font-size: 20px;
+        }
+        @include desktop {
+            font-size: 22px;
+        }
+    }
+    &__container {
+        display: flex;
+    }
+
+    &__container-indiv {
+        display: flex;
+        flex-direction: column;
+        transition: all 2s ease;
+        width: 50%;
+    }
+    &__container-indiv--shrink {
+        opacity: 0.3;
+        width: 10%;
+    }
+    &__container-indiv--expand {
+        width: 90%;
+    } 
+
+    &__name:focus-visible {
+        outline-width: 0;
+    }
+    &__name:focus {
+        border: 2px solid $calm-accent;
+    }
+    &__name--invalid {
+        border: 2px solid red;
+    }
+
+    &__reflection {
+        font-size: 16px;
+        // font-family: "AlbertSans";
+        padding: 0 1rem;
+        resize: none;
+        border: 2px solid $calm-accent;
+        border-radius: 8px;
+        background-color: white;
+        margin-bottom: 2rem;
+        @include tablet {
+            margin-bottom: 1rem;
+            border-radius: 12px;
+            font-size: 20px;
+        }
+        @include desktop {
+            font-size: 22px;
+        }
+    }
+    &__reflection:focus-visible {
+        outline-width: 0;
+    }
+    &__reflection:focus {
+        border: 2px solid $calm-accent;
+    }
+    &__reflection--invalid {
+        border: 2px solid red;
+    }
+
+    &__btn {
+        font-size: 1rem;
+        // font-family: "AlbertSans";
+        width: 5rem;
+        padding: 6px 8px;
+        color: $calm-main;
+        background-color: $calm-accent;
+        border: solid 3px $calm-accent;
+        border-radius: 8px;
+        cursor: pointer;
+        @include tablet {
+            border-radius: 14px;
+            font-size: 20px;
+            width: 8rem;
+            padding: 8px 12px;
+        }
+        @include desktop {
+            font-size: 22px;
+        }
+    }
+    &__btn-container {
+       display: flex;
+       justify-content: end; 
+    }
+}
+
+
+.status--error {
+    display: flex;
+    color: $calm-error;
+}
+

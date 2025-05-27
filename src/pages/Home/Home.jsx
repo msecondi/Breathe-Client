@@ -2,6 +2,8 @@ import Nav from "../../components/Nav/Nav.jsx";
 import Hero from "../../components/Hero/Hero.jsx";
 import InspireMeBtn from "../../components/InspireMeBtn/InspireMeBtn.jsx";
 import QuoteList from "../../components/QuoteList/QuoteList.jsx";
+import Reflection from "../../components/Reflection/Reflection.jsx";
+// import ReflectionForm from "../../components/ReflectionForm/ReflectionForm.jsx";
 
 import { useState, useEffect } from "react";
 
@@ -24,9 +26,10 @@ const Home = () => {
 
             {/* Fav quotes */}
             <QuoteList isActive={isActive}/>
-
-            {/*  Reflection form - "what does being human mean to you?" Which then reveals any and all comments already posted (including default) */}
             
+            {/*  Reflection form - "what does being human mean to you?" Which then reveals any and all comments already posted (including default) */}
+            <Reflection />
+
             {/* Footer with contact info? */}
         </>
     );
