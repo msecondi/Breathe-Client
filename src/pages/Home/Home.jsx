@@ -11,8 +11,8 @@ const Home = () => {
 
     return (
         <>
-            {/* Sticky nav bar */}
-            <Nav />
+            {/* Sticky nav bar? */}
+            <Nav page="home"/>
 
             {/* Hero Banner with alternating words */}
             <Hero />
@@ -24,8 +24,9 @@ const Home = () => {
 
             {/* Fav quotes */}
             <QuoteList isActive={isActive}/>
-            {/*  Reflection form - "what does being human mean to you?" Which then reveals any and all comments already posted (including default) */}
 
+            {/*  Reflection form - "what does being human mean to you?" Which then reveals any and all comments already posted (including default) */}
+            
             {/* Footer with contact info? */}
         </>
     );
