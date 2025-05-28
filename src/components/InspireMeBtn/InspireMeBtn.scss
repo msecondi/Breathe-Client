@@ -5,7 +5,7 @@
 .inspire-btn-container {
     display: flex;
     justify-content: center;
-    margin: 1rem;
+    margin: 2rem;
     transition: all 0.3s ease;
 }
 
@@ -13,7 +13,6 @@
     border: none;
     color: $calm-accent;
     background-color: $calm-main;
-    // border: 1px solid $calm-accent;
     box-shadow: 0 0 0.1rem;
     font-size: 1.2rem;
     padding: 0.75rem 1rem;

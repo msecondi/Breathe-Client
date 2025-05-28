@@ -4,11 +4,13 @@
 
 .hero {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 14rem;
+  height: auto;
   width: 100vw;
-  margin-bottom: 8rem;
+  margin: 4rem 0;
+
   &__text {
     font-size: 4rem;
     font-weight: 300;
@@ -16,9 +18,24 @@
     font-style: italic;
     font-family: fangsong;
     position: relative;
+    margin-bottom: 6rem;
   }
+
   &__text-span {
     transition: all 0.3s ease;
     animation: breathe 8s infinite;
+  }
+
+  &__subheader {
+    margin-top: 2rem;
+    font-size: 1rem;
+    color: $calm-black;
+    padding: 2rem 0;
+    border-top: 1px solid $calm-black;
+    border-bottom: 1px solid $calm-black;
+  }
+  &__subheader span {
+    color: $calm-accent;
+    font-style: italic;
   }
 }

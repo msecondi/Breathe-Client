@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import "./Nav.scss"
 
-const Nav = () => {
+const Nav = ({page}) => {
     const navigate = useNavigate();
     return (
         <>  
@@ -10,12 +10,18 @@ const Nav = () => {
                     breathe
                 </h2>
                 <ul className="main-nav__list">
-                    <li className="main-nav__list-item">
-                        home
-                    </li>
-                    <li className="main-nav__list-item">
-                        release
-                    </li>
+                    <div className="main-nav__list-container">
+                        <li className="main-nav__list-item">
+                            home
+                        </li>
+                        <span className={`current-page ${page === 'home' ? 'current-page--active' : ''}`}/>
+                    </div>
+                    <div className="main-nav__list-container">
+                        <li className="main-nav__list-item">
+                            release
+                        </li>
+                        <span className={`current-page ${page === 'release' ? 'current-page--active' : ''}`}/>
+                    </div>
                 </ul>
             </nav>
         </>
