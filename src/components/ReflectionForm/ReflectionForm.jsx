@@ -6,6 +6,7 @@ import axios from "axios";
 const baseURL = import.meta.env.VITE_BACKEND_URL || "http://localhost:8080";
 
 const ReflectionForm = () => {
+    const [firstName, setFirstName] = useState(''); 
     const [errorMessage, setErrorMessage] = useState('');
     const [isReflectionFocused, setIsReflectionFocused] = useState(false); // for overall feel and user focus
     
@@ -44,31 +45,44 @@ const ReflectionForm = () => {
         event.target.reset();
     }
 
+    useEffect(() => {
+        if(!firstName) {
+            const timeout = setTimeout(() => {
+                setIsReflectionFocused(true);
+            }, 7000); // 7 seconds before the reflection textarea expands
+            return () => clearTimeout(timeout); // Cleanup the timeout on unmount or when firstName changes
+        }
+    }, [firstName]);
     return (
         <>
             <form id="form" onSubmit={handleSubmit}>
                 <div className="form__container">
-                    <div className={`form__container-indiv ${isReflectionFocused ? 'form__container-indiv--shrink' : ''}`}>
-                        <label htmlFor="reflectionName">first name</label>
-                        <input 
-                            className={`form__name`} 
-                            name="reflectionName" 
-                            placeholder="optional"
-                            onFocus={() => setIsReflectionFocused(false)}
-                        />
-                    </div>
                     <div className={`form__container-indiv ${isReflectionFocused ? 'form__container-indiv--expand' : ''}`}>
-                        <label htmlFor="reflectionText">reflection</label>
+                        {/* <label htmlFor="reflectionText">reflection</label> */}
                         <textarea 
                             className={`form__reflection`} 
                             name="reflectionText" 
-                            rows="5" 
                             onFocus={() => setIsReflectionFocused(true)}
+                            placeholder="it can be as long or as short as you like"
                             required
                         >
                         </textarea>
                     </div>
+                    <div className={`form__container-indiv ${isReflectionFocused ? 'form__container-indiv--shrink' : ''}`}>
+                        <label htmlFor="reflectionName">signed...</label>
+                        <input 
+                            className={`form__name`} 
+                            name="reflectionName" 
+                            placeholder="name optional"
+                            onFocus={() => setIsReflectionFocused(false)}
+                            // onChange={(e) => {
+                            //     setFirstName(e.target.value);
+                            //     setIsReflectionFocused(false);
+                            // }}
+                        />
+                    </div>
                 </div>
+                {/* put another button here to select anonymous entry? */}
                 <div className="form__btn-container">
                     <button className="form__btn">reflect</button>
                 </div>

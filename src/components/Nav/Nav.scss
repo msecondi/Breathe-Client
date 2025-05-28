@@ -9,10 +9,11 @@
     // box-shadow: 0 0 1rem;
 
     &__logo {
-        transition: color 2s ease-in;
+        transition: all 2s ease-in-out 2s;
         cursor: pointer;
         &:hover {
             color: $calm-accent;
+            font-style: italic;
             animation:  4s ease 0s infinite reverse forwards running breathe-inverse;
         }
     }

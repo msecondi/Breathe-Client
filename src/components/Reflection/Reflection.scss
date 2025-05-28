@@ -8,7 +8,7 @@
     flex-direction: column;
     padding: 2rem;
     margin-top: 4rem;
-    
+    color: $calm-black;
     background-color: $calm-main;
     &__header {
         // color: $calm-black;
@@ -21,7 +21,7 @@
         width: 70%;
         font-weight: 400;
     }
-    &__sub-header span {
+    span {
         font-style: italic;
         color: $calm-accent;
     }

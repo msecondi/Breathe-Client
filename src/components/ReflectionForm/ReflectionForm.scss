@@ -1,11 +1,12 @@
 @use "../../styles/styles.scss" as *;
 @use "../../styles/partials/variables.scss" as *;
 @use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
 
 #form {
     display: flex;
     flex-direction: column;
-    margin: 3rem 1rem;
+    margin: 1rem;
     @include tablet {
         margin: 3rem 1.5rem 1.5rem;
     }
@@ -14,7 +15,7 @@
     }
     & label {
         // font-family: "AlbertSans";
-        font-size: 16px;
+        font-size: 1rem;
         margin-bottom: 1rem;
         @include tablet {
             font-size: 20px;
@@ -28,15 +29,15 @@
 
 .form {
     &__name {
-        font-size: 16px;
-        // font-family: "AlbertSans";
+        font-size: 1rem;
         padding: 0 1rem;
-        margin-bottom: 16px;
+        margin-bottom: 1rem;
         border: 2px solid $calm-black;
-        border-radius: 8px;
+        border-radius: 1rem;
         background-color: white;
-        height: 36px;
+        height: 3rem;
         margin-bottom: 2rem;
+        transition: all 1s ease;
         @include tablet {
             border-radius: 12px;
             font-size: 20px;
@@ -47,21 +48,25 @@
     }
     &__container {
         display: flex;
+        flex-direction: column;
+        width: 20rem;
     }
 
     &__container-indiv {
         display: flex;
         flex-direction: column;
         transition: all 2s ease;
-        width: 50%;
+        // width: 50%;
     }
     &__container-indiv--shrink {
+        transition: all 2s ease;
         opacity: 0.3;
-        width: 10%;
+        width: 0;
+        height: 0;
     }
-    &__container-indiv--expand {
-        width: 90%;
-    } 
+    // &__container-indiv--expand {
+    //     // width: 90%;
+    // } 
 
     &__name:focus-visible {
         outline-width: 0;
@@ -74,21 +79,24 @@
     }
 
     &__reflection {
-        font-size: 16px;
-        // font-family: "AlbertSans";
-        padding: 0 1rem;
+        font-size: 1rem;
+        font-family: inherit;
+        font-style: normal;
+        padding: 0.5rem;
+        height: 10rem;
         resize: none;
-        border: 2px solid $calm-accent;
-        border-radius: 8px;
-        background-color: white;
+        border: 2px solid $calm-semiblack;
+        border-radius: 1rem;
+        background-color: $calm-body;
         margin-bottom: 2rem;
+        transition: all 1s ease;
         @include tablet {
             margin-bottom: 1rem;
-            border-radius: 12px;
-            font-size: 20px;
+            // border-radius: 12px;
+            font-size: 1.5rem;
         }
         @include desktop {
-            font-size: 22px;
+            font-size: 1.75rem;
         }
     }
     &__reflection:focus-visible {
@@ -96,6 +104,7 @@
     }
     &__reflection:focus {
         border: 2px solid $calm-accent;
+        background-color: white;
     }
     &__reflection--invalid {
         border: 2px solid red;
@@ -104,20 +113,18 @@
     &__btn {
         font-size: 1rem;
         width: 5rem;
-        padding: 6px 8px;
-        color: $calm-main;
-        background-color: $calm-accent;
+        padding: 0.75rem 1rem;
+        color: $calm-accent;
+        background-color: $calm-main;
+        box-shadow: 0 0 0.1rem;
         border: none;
         border-radius: 1rem;
         cursor: pointer;
-        @include tablet {
-            border-radius: 14px;
-            font-size: 20px;
-            width: 8rem;
-            padding: 8px 12px;
-        }
-        @include desktop {
-            font-size: 22px;
+        transition: all 1s ease;
+        &:hover {
+            background-color: $calm-accent;
+            color: $calm-main;
+            box-shadow: 0 0 0.1rem;
         }
     }
     &__btn-container {
@@ -125,7 +132,6 @@
        justify-content: end; 
     }
 }
-
 
 .status--error {
     display: flex;
