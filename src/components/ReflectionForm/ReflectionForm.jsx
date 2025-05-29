@@ -57,7 +57,7 @@ const ReflectionForm = () => {
         <>
             <form id="form" onSubmit={handleSubmit}>
                 <div className="form__container">
-                    <div className={`form__container-indiv ${isReflectionFocused ? 'form__container-indiv--expand' : ''}`}>
+                    <div className={`form__container-indiv`}>
                         {/* <label htmlFor="reflectionText">reflection</label> */}
                         <textarea 
                             className={`form__reflection`} 
@@ -83,7 +83,7 @@ const ReflectionForm = () => {
                     </div>
                 </div>
                 {/* put another button here to select anonymous entry? */}
-                <div className="form__btn-container">
+                <div className={`form__btn-container ${isReflectionFocused ? 'form__btn-container--shift-up' : ''}`}>
                     <button className="form__btn">reflect</button>
                 </div>
             </form>
