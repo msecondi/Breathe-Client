@@ -1,0 +1,25 @@
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .text {
+      font-family: 'Georgia', serif;
+      font-size: 36px;
+      fill: #333;
+      font-style: italic;
+    }
+    .wave {
+      fill: none;
+      stroke: #9ec5c5;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-dasharray: 4;
+      animation: breatheWave 4s ease-in-out infinite;
+    }
+    @keyframes breatheWave {
+      0% { stroke-dashoffset: 0; }
+      50% { stroke-dashoffset: 10; }
+      100% { stroke-dashoffset: 0; }
+    }
+  </style>
+  <text x="0" y="40" class="text">breathe</text>
+  <path class="wave" d="M 80 50 Q 90 40, 100 50 T 120 50 T 140 50 T 160 50"></path>
+</svg>
