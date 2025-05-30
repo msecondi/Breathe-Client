@@ -1,4 +1,3 @@
-// import Nav from "../../components/Nav/Nav.jsx";
 import Hero from "../../components/Hero/Hero.jsx";
 import InspireMeBtn from "../../components/InspireMeBtn/InspireMeBtn.jsx";
 import QuoteList from "../../components/QuoteList/QuoteList.jsx";
@@ -24,9 +23,6 @@ const Home = () => {
 
     return (
         <>
-            {/* Sticky nav bar? */}
-            {/* <Nav page="home"/> */}
-
             {/* Hero Banner with alternating words */}
             <Hero />
 

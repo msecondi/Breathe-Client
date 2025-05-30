@@ -3,10 +3,6 @@
 @use "./partials/_mixins" as *;
 @use "./partials/_typography" as *;
 
-// * {
-//     font-family: $primary-font;
-//     background-color: rgb(245, 245, 245); //a bit darker than white
-// }
 h1 {
     font-size: 2rem;
     line-height: 2rem;

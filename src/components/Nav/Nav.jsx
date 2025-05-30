@@ -9,7 +9,6 @@ const Nav = ({currentPage}) => {
                     <h2 className="main-nav__logo">
                         breathe
                     </h2>
-
                 </Link>
                 <ul className="main-nav__list">
                     <div className="main-nav__list-container">
@@ -18,9 +17,6 @@ const Nav = ({currentPage}) => {
                     </div>
                     <div className="main-nav__list-container">
                         <Link to="/release" className="main-nav__list-item">release</Link>
-                            {/* <li className="main-nav__list-item" onClick={() => navigate('/release')}>
-                                release
-                            </li> */}
                         <span className={`current-page ${currentPage === 'release' ? 'current-page--active' : ''}`}/>
                     </div>
                 </ul>
