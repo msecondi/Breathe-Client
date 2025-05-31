@@ -8,14 +8,15 @@ const baseURL = import.meta.env.VITE_BACKEND_URL || "http://localhost:8080";
 const ReflectionForm = () => {
     const [errorMessage, setErrorMessage] = useState('');
     const [isReflectionFocused, setIsReflectionFocused] = useState(false); // for overall feel and user focus
-    const [isNameFieldFocued, setIsNameFieldFocused] = useState(false); 
+    const [reflectionName, setReflectionName] = useState(''); // for name input
+    const [anonymous, setAnonymous] = useState(false); 
     
     const handleSubmit = async (event) => {
         try{
             event.preventDefault();
             console.log(event.target.reflectionText.value);
             //anonymous reflection
-            if(!event.target.reflectionName.value && event.target.reflectionText.value) { 
+            if(anonymous && !event.target.reflectionName.value && event.target.reflectionText.value) {
                 const status = await axios.post(`${baseURL}/reflections`, {message: event.target.reflectionText.value});
                 setErrorMessage('');
                 // setStatusMessage(status.data);
@@ -45,14 +46,26 @@ const ReflectionForm = () => {
         event.target.reset();
     }
 
+    const handleAnonymousChange = (event) => {
+        setAnonymous(event.target.checked);
+        if (event.target.checked) {
+            console.log(reflectionName)
+            setReflectionName(''); // Clear the name field when anonymous is checked
+            setIsReflectionFocused(true); // Focus on the reflection textarea when anonymous is checked
+        } else {
+            setIsReflectionFocused(false); // Remove focus when unchecked
+        }
+    }
+
     useEffect(() => {
-        if(!isNameFieldFocued) {
+        if(!anonymous && isReflectionFocused) {
             const timeout = setTimeout(() => {
                 setIsReflectionFocused(true);
-            }, 7000); // 7 seconds before the reflection textarea expands
-            return () => clearTimeout(timeout); // Cleanup the timeout on unmount or when firstName changes
+                setAnonymous(true);
+            }, 8000); // 8 seconds before the name field disappears
+            return () => clearTimeout(timeout); // Cleanup the timeout on unmount or when name changes
         }
-    }, [isNameFieldFocued]);
+    }, [anonymous, isReflectionFocused]);
     return (
         <>
             <form id="form" onSubmit={handleSubmit}>
@@ -61,25 +74,36 @@ const ReflectionForm = () => {
                         <textarea 
                             className={`form__reflection`} 
                             name="reflectionText" 
-                            onFocus={() => {setIsReflectionFocused(true); setIsNameFieldFocused(false)}}
+                            onFocus={() => {setIsReflectionFocused(true); }}
+                            onBlur={() => setIsReflectionFocused(false)}
                             placeholder="it can be as long or as short as you like"
                             required
                         >
                         </textarea>
                     </div>
-                    <div className={`form__container-indiv ${isReflectionFocused ? 'form__container-indiv--shrink' : ''}`}>
-                        <label htmlFor="reflectionName">signed...</label>
+                    <div className={`form__container-indiv  ${anonymous ? 'form__container-indiv--shrink' : ''}`}>
+                        <div className="form__sign">
+                            <input 
+                                type="checkbox" 
+                                id="anonymous" 
+                                name="anonymous" 
+                                className="form__checkbox" 
+                                checked={anonymous}
+                                onClick={handleAnonymousChange}
+                            />
+                            <label htmlFor="anonymous">anonymous</label>
+                        </div>
+
                         <input 
-                            className={`form__name`} 
+                            className={`form__name ${anonymous ? 'form__name--disappear' : ''}`} 
                             name="reflectionName" 
                             placeholder="name optional"
-                            onFocus={() => {setIsReflectionFocused(false); setIsNameFieldFocused(true)}}
-                            onBlur={() => setIsNameFieldFocused(false)}
+                            onChange={(e) => setReflectionName(e.target.value)}
+                            value={reflectionName}
                         />
                     </div>
                 </div>
-                {/* put another button here to select anonymous entry? */}
-                <div className={`form__btn-container ${isReflectionFocused ? 'form__btn-container--shift-up' : ''}`}>
+                <div className={`form__btn-container ${anonymous ? 'form__btn-container--shift-up' : ''}`}>
                     <button className="form__btn">reflect</button>
                 </div>
             </form>

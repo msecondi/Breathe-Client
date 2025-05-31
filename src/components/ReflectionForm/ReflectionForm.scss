@@ -32,12 +32,12 @@
         font-size: 1rem;
         padding: 0 1rem;
         margin-bottom: 1rem;
-        border: 2px solid $calm-black;
+        border: 2px solid $calm-semiblack;
         border-radius: 1rem;
         background-color: white;
         height: 3rem;
         margin-bottom: 2rem;
-        // transition: all 2s ease;
+        transition: all 2s ease;
         @include tablet {
             border-radius: 12px;
             font-size: 20px;
@@ -74,6 +74,10 @@
     &__name--invalid {
         border: 2px solid red;
     }
+    &__name--disappear {
+        opacity: 0;
+        transition: all 3s ease;
+    }
 
     &__reflection {
         font-size: 1rem;
@@ -85,7 +89,7 @@
         border: 2px solid $calm-semiblack;
         border-radius: 1rem;
         background-color: $calm-body;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
         transition: all 1s ease;
         @include tablet {
             margin-bottom: 1rem;
@@ -105,6 +109,15 @@
     }
     &__reflection--invalid {
         border: 2px solid red;
+    }
+
+    &__sign {
+        display: flex;
+        align-items: flex-start;
+    }
+    &__checkbox {
+        margin-right: 0.5rem;
+        cursor: pointer;
     }
 
     &__btn {

@@ -12,11 +12,8 @@ const FireFeed = () => {
 
     return (
         <>
-            {/* <Nav page="release"/> */}
-
             {/* ~ flame animation ~ */}
             
-
         </>
     )
 }
