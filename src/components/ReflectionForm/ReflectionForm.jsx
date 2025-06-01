@@ -71,10 +71,10 @@ const ReflectionForm = () => {
             <form id="form" onSubmit={handleSubmit}>
                 <div className="form__container">
                     <div className={`form__container-indiv`}>
-                        <textarea 
-                            className={`form__reflection`} 
-                            name="reflectionText" 
-                            onFocus={() => {setIsReflectionFocused(true); }}
+                        <textarea
+                            className={`form__reflection`}
+                            name="reflectionText"
+                            onFocus={() => { setIsReflectionFocused(true); }}
                             onBlur={() => setIsReflectionFocused(false)}
                             placeholder="it can be as long or as short as you like"
                             required

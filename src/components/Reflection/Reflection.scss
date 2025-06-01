@@ -12,7 +12,9 @@
     background-color: $calm-main;
     &__header {
         // color: $calm-black;
-        margin: 4rem;
+        text-align: center;
+        padding: 4rem;
+        border-bottom: 1px solid black;
     }
     &__sub-header {
         // color: $calm-black;
