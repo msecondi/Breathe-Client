@@ -1,0 +1,23 @@
+@use "../../styles/styles.scss" as *;
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/mixins" as *;
+
+.flame-container {
+  display: inline-block;
+  animation: flicker 1.5s infinite ease-in-out;
+  transform-origin: center;
+}
+
+@keyframes flicker {
+  0%   { transform: scale(1) rotate(0deg); opacity: 1; }
+  10%  { transform: scale(1.01) rotate(-0.3deg); opacity: 0.95; }
+  20%  { transform: scale(0.98) rotate(0.2deg); opacity: 1; }
+  30%  { transform: scale(1.02) rotate(-0.8deg); opacity: 0.92; }
+  40%  { transform: scale(0.99) rotate(0.1deg); opacity: 1; }
+  50%  { transform: scale(1) rotate(-0.1deg); opacity: 0.87; }
+  60%  { transform: scale(1.01) rotate(0.3deg); opacity: 1; }
+  70%  { transform: scale(1.03) rotate(-0.4deg); opacity: 0.9; }
+  80%  { transform: scale(0.99) rotate(0.2deg); opacity: 1; }
+  90%  { transform: scale(1.02) rotate(-0.2deg); opacity: 0.96; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}

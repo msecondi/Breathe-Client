@@ -1,0 +1,10 @@
+@use "../../../styles/styles.scss" as *;
+@use "../../../styles/partials/variables.scss" as *;
+@use "../../../styles/partials/mixins" as *;
+
+svg {
+    width: 2rem;
+    height: 2rem;
+    fill: $calm-black;
+    padding-right: 0.5rem;
+}

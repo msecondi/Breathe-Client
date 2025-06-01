@@ -19,7 +19,6 @@ a {
         cursor: pointer;
         &:hover {
             color: $calm-accent;
-            font-style: italic;
             animation:  4s ease 0s infinite reverse forwards running breathe-inverse;
         }
     }

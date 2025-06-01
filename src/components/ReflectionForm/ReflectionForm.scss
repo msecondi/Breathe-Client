@@ -61,7 +61,7 @@
     }
     &__container-indiv--shrink {
         transition: all 2s ease;
-        opacity: 0.1;
+        opacity: 0.2;
         width: 0;
     }
 
@@ -76,7 +76,7 @@
     }
     &__name--disappear {
         opacity: 0;
-        transition: all 3s ease;
+        transition: all 1.75s ease;
     }
 
     &__reflection {
