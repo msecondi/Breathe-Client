@@ -1,0 +1,25 @@
+@use "../../styles/styles.scss" as *;
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/_mixins.scss" as *;
+
+.firefeed {
+    &__floating {
+        position: absolute;
+        left: 50%;
+        top: 60%;
+        transform: translate(-50%, 0);
+        animation: floatUp 3s forwards;
+        background: rgba(255,255,255,0.8);
+        padding: 1rem 2rem;
+        border-radius: 1rem;
+        font-size: 1.2rem;
+        color: #333;
+    }
+    &__response {
+        transition: all 2.5s ease;
+        &--active {
+            opacity: 1;
+            animation: fadeOut 3s ease forwards;
+        }
+    }
+}

@@ -8,7 +8,7 @@ const Hero = () => {
         'connection', 
         'genuity', 
         'patience',
-        'openess', 
+        'openness', 
         'belonging', 
         'calm',
         'listening', 

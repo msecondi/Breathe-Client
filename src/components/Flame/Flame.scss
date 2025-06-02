@@ -2,7 +2,7 @@
 @use "../../styles/partials/variables.scss" as *;
 @use "../../styles/partials/mixins" as *;
 
-.flame-container {
+.flame {
   display: inline-block;
   animation: flicker 1.5s infinite ease-in-out;
   transform-origin: center;

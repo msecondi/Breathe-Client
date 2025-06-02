@@ -32,18 +32,16 @@
   50% { transform: scale(1.05); box-shadow: 0 0 0.5rem $calm-accent; }
   100% { transform: scale(1); box-shadow: 0; }
 }
-//quotes animations
+//fade in animation
 @keyframes fadeIn {
   to {
     opacity: 1;
-    transform: translateY(0);
-    transform: translateX(0);
   }
 }
+//fade out animation
 @keyframes fadeOut {
   to {
     opacity: 0;
-    transform: translateY(3rem);
     display: none;
   }
 }
@@ -61,4 +59,10 @@
   80%  { transform: scale(0.99) rotate(0.2deg); opacity: 1; }
   90%  { transform: scale(1.02) rotate(-0.2deg); opacity: 0.96; }
   100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+//firefeed float up animation
+@keyframes floatUp {
+    0% { opacity: 1; transform: translate(-50%, 0);}
+    50% { background: rgba(253, 44, 44, 0.5);}
+    100% { opacity: 0; transform: translate(-50%, -14rem); background: black;}
 }

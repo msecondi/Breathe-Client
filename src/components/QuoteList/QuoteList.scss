@@ -6,26 +6,25 @@
     display: flex;
     justify-content: center;
     flex-flow: row wrap;
+    &-wrapper {
+      overflow: hidden;
+      transition: max-height 3.5s ease, opacity 4s ease;
+      max-height: 50rem; // assume this is taller than list will ever be
+      opacity: 1;
+    }
+    &-wrapper--hidden {
+      max-height: 0;
+      opacity: 0;
+    }
 }
-.list-wrapper {
-  overflow: hidden;
-  transition: max-height 4s ease, opacity 4s ease;
-  max-height: 100rem; // assume this is taller than your list ever will be
-  opacity: 1;
 
-  &--hidden {
-    max-height: 0;
-    opacity: 0;
-  }
-}
-
-.fade-in-list {
-  opacity: 0;
-  transform: translateY(-2rem);
-  animation: fadeIn 1.5s ease forwards;
-}
-.fade-out-list {
-    opacity: 1;
-    transform: translateY(0);
-    animation: fadeOut 1.5s ease forwards;
-}
+// .fade-in-list {
+//   opacity: 0;
+//   transform: translateY(-2rem);
+//   animation: fadeIn 1.5s ease forwards;
+// }
+// .fade-out-list {
+//     opacity: 1;
+//     transform: translateY(0);
+//     animation: fadeOut 1.5s ease forwards;
+// }
