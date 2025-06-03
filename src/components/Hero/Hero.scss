@@ -11,6 +11,10 @@
   width: 100vw;
   margin: 4rem 0;
 
+  @include tablet {
+    margin-bottom: 8rem;
+  }
+
   &__text {
     font-size: 4rem;
     font-weight: 300;

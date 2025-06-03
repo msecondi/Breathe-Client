@@ -7,4 +7,13 @@ svg {
     height: 2rem;
     fill: $calm-black;
     padding-right: 0.5rem;
+    @include tablet {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    @include desktop {
+        width: 2.75rem;
+        height: 2.75rem;
+        padding-right: 1rem;
+    }
 }
