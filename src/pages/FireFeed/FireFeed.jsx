@@ -23,7 +23,9 @@ const FireFeed = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!reflection) return; // Prevent submission if the input is empty
+
+        // Prevent submission if the input is empty & give user feedback
+        if (!reflection.trim()) return setErrorMessage("please enter what's on your mind"); 
 
         try {
             // Send the reflection to the backend
@@ -71,18 +73,6 @@ const FireFeed = () => {
                     {reflection}
                 </div>
             )}
-            <div className="firefeed__prompt">
-                What would you like to let go of today?
-            </div>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    placeholder="Enter your thoughts..."
-                    value={reflection}
-                    onChange={(e) => setReflection(e.target.value)}
-                />
-                <button type="submit">Submit</button>
-            </form>
             {errorMessage && (
                 <div className="firefeed__error">
                     {errorMessage}
@@ -91,6 +81,15 @@ const FireFeed = () => {
             <div className={`firefeed__response ${responseMessage ? 'firefeed__response--active' : ''}`}>
                 {responseMessage}
             </div>
+            <form className="firefeed__form" onSubmit={handleSubmit}>
+                <textarea
+                    type="text"
+                    placeholder="what would you like to let go of today?"
+                    value={reflection}
+                    onChange={(e) => setReflection(e.target.value)}
+                />
+                <button type="submit">release</button>
+            </form>
         </>
     )
 }

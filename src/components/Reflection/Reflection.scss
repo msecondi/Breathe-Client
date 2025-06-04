@@ -10,6 +10,9 @@
     margin-top: 4rem;
     color: $calm-black;
     background-color: $calm-main;
+    @include desktop {
+        padding-bottom: 10rem;
+    }
     &__header {
         // color: $calm-black;
         text-align: center;

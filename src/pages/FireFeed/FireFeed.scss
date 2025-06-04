@@ -15,11 +15,65 @@
         font-size: 1.2rem;
         color: #333;
     }
+    &__form {
+        margin: 1rem;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: end;
+        border-radius: 1rem;
+        & textarea {
+            font-family: inherit;
+            width: 100%;
+            position: relative;
+            bottom: 0px;
+            height: 10rem;
+            font-size: 1rem;
+            resize: none;
+            border: 2px solid $calm-semiblack;
+            border-radius: 1rem;
+            transition: all 1s ease;
+            &:focus-visible {
+                outline-width: 0;
+            }
+            &:focus {
+                border: 2px solid $calm-flame;
+                // background-color: white;
+            }
+        }
+        & button {
+            font-size: 1rem;
+            padding: 0.75rem 1rem;
+            color: $calm-flame;
+            background-color: $calm-flame-secondary;
+            box-shadow: 0 0 0.1rem;
+            border: none;
+            border-radius: 1rem;
+            cursor: pointer;
+            transition: all 1s ease;
+            // margin-bottom: 1rem;
+            @include tablet {
+                padding: 1rem 1.3rem;
+                border-radius: 1.5rem;
+                font-size: 1.2rem;
+            }
+            &:hover {
+                background-color: $calm-flame;
+                color: $calm-main;
+                box-shadow: 0 0 0.1rem;
+            }
+    }
+    }
     &__response {
         transition: all 2.5s ease;
         &--active {
             opacity: 1;
             animation: fadeOut 3s ease forwards;
         }
+    }
+    &__error {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        width: 100%;
     }
 }
