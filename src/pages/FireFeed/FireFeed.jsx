@@ -23,8 +23,16 @@ const FireFeed = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!reflection) return; // Prevent submission if the input is empty
 
+        // Prevent submission if the input is empty & give user feedback
+        if (!reflection.trim()) {
+            setErrorMessage("please enter what's on your mind"); 
+            setTimeout(() => {
+                setErrorMessage('');
+            }, 8000);
+            return;
+        }
+        // e.target.reset(); 
         try {
             // Send the reflection to the backend
             const response = await axios.post(`${baseURL}/fire-feed`, { message: reflection });
@@ -34,11 +42,12 @@ const FireFeed = () => {
 
             // Trigger floating animation
             setFloating(true);
+            e.target.reset();
             setTimeout(() => {
                 setFloating(false);
                 setReflection(''); // Clear the input after submission
                 setResponseMessage(''); // Clear the response message after a short delay
-            }, 3000); // Animation duration
+            }, 4000); // Animation duration
         } catch (error) {
             if(error.response && error.response.data) {
                 // Handle specific error messages from the backend
@@ -64,25 +73,8 @@ const FireFeed = () => {
     }, [floating]); //Re-renders everytime a submission is entered via 'floating'
 
     return (
-        <>
+        <section className="firefeed">
             <Flame countMultiplier={countMultiplier} />
-            {floating && ( // FLOATING ANIMATION
-                <div className="firefeed__floating">
-                    {reflection}
-                </div>
-            )}
-            <div className="firefeed__prompt">
-                What would you like to let go of today?
-            </div>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    placeholder="Enter your thoughts..."
-                    value={reflection}
-                    onChange={(e) => setReflection(e.target.value)}
-                />
-                <button type="submit">Submit</button>
-            </form>
             {errorMessage && (
                 <div className="firefeed__error">
                     {errorMessage}
@@ -91,7 +83,22 @@ const FireFeed = () => {
             <div className={`firefeed__response ${responseMessage ? 'firefeed__response--active' : ''}`}>
                 {responseMessage}
             </div>
-        </>
+            {floating && ( // FLOATING ANIMATION
+                <div className="firefeed__floating">
+                    {reflection}
+                </div>
+            )}
+            <form className="firefeed__form" onSubmit={handleSubmit} style={{ marginTop: `${1 + (countMultiplier * 0.1)}rem` }}>
+                <button type="submit">release</button>
+                <textarea
+                    name="firefeed__textarea"
+                    type="text"
+                    placeholder="what would you like to let go of today?"
+                    value={reflection}
+                    onChange={(e) => setReflection(e.target.value)}
+                />
+            </form>
+        </section>
     )
 }
 

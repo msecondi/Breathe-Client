@@ -25,7 +25,6 @@ const Hero = () => {
         'resilience',
     ];
 
-    // const [index, setIndex] = useState(0);
     const [displayedText, setDisplayedText] = useState('');
 
     useEffect(() => {
