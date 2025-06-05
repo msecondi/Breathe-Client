@@ -25,7 +25,7 @@ a {
             animation: 4s ease 0s infinite reverse forwards running breathe-inverse;
         }
     }
-    &__logo--release {
+    &__logo--release { //release page
         &:hover {
             color: $calm-flame;
             animation: 4s ease 0s infinite reverse forwards running breathe-inverse;
