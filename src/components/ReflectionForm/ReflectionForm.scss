@@ -36,7 +36,7 @@
         border-radius: 1rem;
         background-color: white;
         height: 3rem;
-        margin: 2rem 0;
+        margin: 1rem 0;
         transition: all 2s ease;
     }
     &__name:focus-visible {
@@ -86,7 +86,7 @@
         border: 2px solid $calm-semiblack;
         border-radius: 1rem;
         background-color: $calm-body;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
         transition: all 1s ease;
         @include tablet {
             margin-bottom: 2rem;

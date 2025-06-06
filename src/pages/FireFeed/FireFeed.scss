@@ -3,6 +3,14 @@
 @use "../../styles/partials/_mixins.scss" as *;
 
 .firefeed {
+    &__subheader {
+        text-align: center;
+        animation: fadeOut 10s ease forwards;
+        & span {
+            font-style: italic;
+            color: $calm-flame;
+        }
+    }
     &__floating {
         z-index: 1;
         position: absolute;
@@ -22,7 +30,7 @@
         flex-direction: column;
         align-items: end;
         border-radius: 1rem;
-        & textarea {
+        &-textarea {
             font-family: inherit;
             box-sizing: border-box;
             padding: 0.5rem;
@@ -34,7 +42,7 @@
             resize: none;
             border: 2px solid $calm-semiblack;
             border-radius: 1rem;
-            transition: all 1s ease;
+            transition: all 2s ease;
             &:focus-visible {
                 outline-width: 0;
             }
@@ -43,28 +51,35 @@
                 // background-color: white;
             }
         }
-        & button {
+        &-btn {
             font-size: 1rem;
             padding: 0.75rem 1rem;
             color: $calm-flame;
             background-color: $calm-flame-secondary;
-            box-shadow: 0 0 0.1rem;
-            border: none;
-            border-radius: 1rem;
+            // box-shadow: 0 0 0.1rem;
+            border: 2px solid $calm-flame-dull;
+            position: relative;
+            bottom: -10rem;
+            border-radius: 1rem 0;
             cursor: pointer;
-            transition: all 1s ease;
+            transition: all 2s ease;
             z-index: 1;
             @include tablet {
                 padding: 1rem 1.3rem;
-                border-radius: 1.5rem;
+                // border-radius: 1.5rem;
                 font-size: 1.2rem;
             }
             &:hover {
                 background-color: $calm-flame;
                 color: $calm-main;
                 box-shadow: 0 0 0.1rem;
+                border: 2px solid $calm-flame;
+                opacity: 1;
             }
-    }
+        }
+        &-btn--disappear { //to make user input easily visible
+            opacity: 0.2;
+        }
     }
     &__response {
         font-size: 1rem;
