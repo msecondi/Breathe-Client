@@ -4,8 +4,8 @@ import flameAnimation from "../../assets/animations/flame.json"
 
 const Flame = ({countMultiplier}) => {
 
-    let flameScale = 0.2 + (countMultiplier * 0.1); // Base scale plus multiplier effect
-    if(flameScale > 2) flameScale = 2; // Cap the scale to prevent flame from getting too large
+    let flameScale = 0.2 + (countMultiplier * 0.05); // Base scale plus multiplier effect
+    if(flameScale > 1.5) flameScale = 1.5; // Cap the scale to prevent flame from getting too large
 
     const flameStyle = {
         transform: `scale(${flameScale})`,
