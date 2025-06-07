@@ -75,7 +75,7 @@ const FireFeed = () => {
 
     return (
         <section className="firefeed">
-            <h4 className="firefeed__subheader"><span>allow yourself to <span className="firefeed__subheader-italic">feel</span>  then <span className="firefeed__subheader-italic">let go</span></span></h4>
+            <h4 className="firefeed__subheader"><span>allow yourself to <span className="firefeed__subheader-italic">feel</span> then <span className="firefeed__subheader-italic">let go</span></span></h4>
             <Flame countMultiplier={countMultiplier} />
             {errorMessage && (
                 <div className="firefeed__error">
@@ -91,7 +91,8 @@ const FireFeed = () => {
                 </div>
             )}
             {/* <div className="firefeed__subheader">what would you like to let go of today?</div> */}
-            <form className="firefeed__form" onSubmit={handleSubmit} style={{ marginTop: `${0.5 + (countMultiplier * 0.1)}rem` }}>
+            {/* style={{ marginTop: `${0.5 + (countMultiplier * 0.1)}rem` } */}
+            <form className="firefeed__form" onSubmit={handleSubmit}>
                 <button type="submit" className={`firefeed__form-btn ${isFormFocused ? 'firefeed__form-btn--disappear' : ''}`}>release</button>
                 <textarea
                     className="firefeed__form-textarea"

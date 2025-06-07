@@ -29,24 +29,23 @@
   transform-origin: center;
   max-width: 100%;
   max-height: 100%;
-  filter: drop-shadow(0 0 1.5rem $calm-flame-accent);
+  filter: drop-shadow(0 0 3rem $calm-flame-accent);
 }
 
 .flame-container {
   height: 33rem;
-  width: 33rem; // NEW: make width explicit to avoid aspect ratio shifting
-  overflow: hidden; // NEW: prevents scaled flame from spilling out
+  width: 33rem;
+  overflow: hidden; //prevent scaled flame from impeding on other elements
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   z-index: -1;
-  transition: 'transform 1.7s ease-out';
+  transition: all 2s ease-out;
   @include tablet {
     height: 37rem;
     width: 37rem;
   }
-
   @include desktop {
     height: 40rem;
     width: 40rem;

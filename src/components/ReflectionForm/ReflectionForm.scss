@@ -39,6 +39,7 @@
         margin: 1rem 0;
         transition: all 2s ease;
         @include desktop {
+            font-size: 1.25rem;
             margin-bottom: 2rem;
         }
     }
