@@ -85,7 +85,7 @@ const FireFeed = () => {
 
     return (
         <section className="firefeed">
-            {subheader && (<div className="firefeed__subheader">let yourself <span>feel</span> and then let go</div>)}
+            <h4 className="firefeed__subheader"><span>allow yourself to <span className="firefeed__subheader-italic">feel</span>  then let go</span></h4>
             <Flame countMultiplier={countMultiplier} />
             {errorMessage && (
                 <div className="firefeed__error">
@@ -107,7 +107,7 @@ const FireFeed = () => {
                     className="firefeed__form-textarea"
                     name="firefeed__textarea"
                     type="text"
-                    placeholder="take as much time as you need..."
+                    placeholder="there’s space here for what has yet to be expressed..."
                     value={reflection}
                     onChange={(e) => setReflection(e.target.value)}
                     onFocus={() => setIsFormFocused(true)}

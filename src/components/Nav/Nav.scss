@@ -50,6 +50,9 @@ a {
         @include tablet {
             font-size: 1.25rem;
         }
+        @include desktop {
+            font-size: 1.5rem;
+        }
         &:hover {
             transform: scale(1.15);
             color: $calm-accent;
@@ -61,6 +64,9 @@ a {
         cursor: pointer;
         @include tablet {
             font-size: 1.25rem;
+        }
+        @include desktop {
+            font-size: 1.5rem;
         }
         &:hover {
             transform: scale(1.15);
@@ -74,39 +80,41 @@ a {
     height: 0.3rem;
     // width: 2.5rem;
     // height: 0.1rem;
-    background-color: $calm-accent;
     border-radius: 3rem;
     position: absolute;
     top: 4.2rem;
     opacity: 0;
-    transition: all 2s ease;
+    transition: height 2s ease, width 2s ease, opacity 2s ease;
     @include tablet {
         top: 6rem;
-        width: 0.6rem;
-        height: 0.6rem;
     }
     @include desktop {
-        top: 7rem;
-        width: 0.6rem;
-        height: 0.6rem;
+        top: 7.1rem;
     }
     &--active-home {
+        background-color: $calm-accent;
         opacity: 1;
-        width: 2.5rem;
+        width: 2.4rem;
         height: 0.1rem;
         @include tablet {
-            width: 3rem;
+            width: 2.9rem;
             height: 0.15rem;
+        }
+        @include desktop {
+            width: 3.5rem;
         }
     }
     &--active-release {
         background-color: $calm-flame;
         opacity: 1;
-        width: 2.5rem;
+        width: 3rem;
         height: 0.1rem;
         @include tablet {
-            width: 3rem;
+            width: 3.8rem;
             height: 0.15rem;
+        }
+        @include desktop {
+            width: 4.5rem;
         }
     }
 }
