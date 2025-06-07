@@ -3,7 +3,7 @@ import "./FireFeed.scss";
 import Flame from "../../components/Flame/Flame.jsx";
 
 import { useOutletContext } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 
 // Set the base URL for the backend API
@@ -17,6 +17,7 @@ const FireFeed = () => {
     }, []);
 
     const [reflection, setReflection] = useState('');
+    const [isFormFocused, setIsFormFocused] = useState(false)
     const [floating, setFloating] = useState(false);
     const [responseMessage, setResponseMessage] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
@@ -26,13 +27,12 @@ const FireFeed = () => {
 
         // Prevent submission if the input is empty & give user feedback
         if (!reflection.trim()) {
-            setErrorMessage("please enter what's on your mind"); 
+            setErrorMessage("enter what's on your mind"); 
             setTimeout(() => {
                 setErrorMessage('');
             }, 8000);
             return;
         }
-        // e.target.reset(); 
         try {
             // Send the reflection to the backend
             const response = await axios.post(`${baseURL}/fire-feed`, { message: reflection });
@@ -42,7 +42,6 @@ const FireFeed = () => {
 
             // Trigger floating animation
             setFloating(true);
-            e.target.reset();
             setTimeout(() => {
                 setFloating(false);
                 setReflection(''); // Clear the input after submission
@@ -64,23 +63,26 @@ const FireFeed = () => {
         const fetchCount = async () => {
             try {
                 const response = await axios.get(`${baseURL}/fire-feed/count`);
-                setCountMultiplier(response.data.count);
+                const maxCount = response.data.count > 26 ? 26 : response.data.count; // set max count (26 due to multiplication equations set) to maintain page styling integrity
+                setCountMultiplier(maxCount);
             } catch (error) {
                 console.error("Error fetching count:", error);
             }
         };
         fetchCount();
+        
     }, [floating]); //Re-renders everytime a submission is entered via 'floating'
 
     return (
         <section className="firefeed">
+            <h4 className="firefeed__subheader"><span>allow yourself to <span className="firefeed__subheader-italic">feel</span> then <span className="firefeed__subheader-italic">let go</span></span></h4>
             <Flame countMultiplier={countMultiplier} />
             {errorMessage && (
                 <div className="firefeed__error">
                     {errorMessage}
                 </div>
             )}
-            <div className={`firefeed__response ${responseMessage ? 'firefeed__response--active' : ''}`}>
+            <div className={`firefeed__response ${responseMessage ? 'firefeed__response--active' : ''}`} style={{ marginTop: `${0.5 + (countMultiplier * 0.1)}rem` }}>
                 {responseMessage}
             </div>
             {floating && ( // FLOATING ANIMATION
@@ -88,14 +90,25 @@ const FireFeed = () => {
                     {reflection}
                 </div>
             )}
-            <form className="firefeed__form" onSubmit={handleSubmit} style={{ marginTop: `${1 + (countMultiplier * 0.1)}rem` }}>
-                <button type="submit">release</button>
+            {/* <div className="firefeed__subheader">what would you like to let go of today?</div> */}
+            {/* style={{ marginTop: `${0.5 + (countMultiplier * 0.1)}rem` } */}
+            <form className="firefeed__form" onSubmit={handleSubmit}>
+                <button type="submit" className={`firefeed__form-btn ${isFormFocused ? 'firefeed__form-btn--disappear' : ''}`}>release</button>
                 <textarea
+                    className="firefeed__form-textarea"
                     name="firefeed__textarea"
                     type="text"
-                    placeholder="what would you like to let go of today?"
+                    placeholder="there’s space here for what's on your mind..."
                     value={reflection}
                     onChange={(e) => setReflection(e.target.value)}
+                    onFocus={() => setIsFormFocused(true)}
+                    onBlur={() => setIsFormFocused(false)}
+                    onKeyDown={(e) => { //allow the user to also press enter to submit
+                        if(e.key === 'Enter' && !e.shiftKey) {
+                            e.preventDefault();
+                            handleSubmit(e);
+                        }
+                    }}
                 />
             </form>
         </section>

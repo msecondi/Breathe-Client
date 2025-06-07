@@ -34,16 +34,21 @@
         margin-bottom: 1rem;
         border: 2px solid $calm-semiblack;
         border-radius: 1rem;
-        background-color: white;
+        background-color: $calm-body;
         height: 3rem;
-        margin: 2rem 0;
+        margin: 1rem 0;
         transition: all 2s ease;
+        @include desktop {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+        }
     }
     &__name:focus-visible {
         outline-width: 0;
     }
     &__name:focus {
         border: 2px solid $calm-accent;
+        background-color: white;
     }
     &__name--invalid {
         border: 2px solid red;
@@ -86,7 +91,7 @@
         border: 2px solid $calm-semiblack;
         border-radius: 1rem;
         background-color: $calm-body;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
         transition: all 1s ease;
         @include tablet {
             margin-bottom: 2rem;

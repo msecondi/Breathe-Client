@@ -97,7 +97,7 @@ const ReflectionForm = () => {
                         <input 
                             className={`form__name ${anonymous ? 'form__name--disappear' : ''}`} 
                             name="reflectionName" 
-                            placeholder="name optional"
+                            placeholder="name"
                             onChange={(e) => setReflectionName(e.target.value)}
                             value={reflectionName}
                         />

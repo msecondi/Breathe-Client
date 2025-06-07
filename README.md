@@ -42,7 +42,6 @@ This app will be mindful of the sensitive nature of mental health. It will inclu
 ### Tech Stack
 
 - HTML, CSS, JavaScript
-- TailwindCSS (optional)
 - React, Axios
 - Node.js, Express
 - MySQL, Knex.js

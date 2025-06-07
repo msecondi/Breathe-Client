@@ -37,6 +37,9 @@
     padding: 2rem 0;
     border-top: 1px solid $calm-black;
     border-bottom: 1px solid $calm-black;
+    @include desktop {
+      font-size: 1.25rem;
+    }
   }
   &__subheader span {
     color: $calm-accent;

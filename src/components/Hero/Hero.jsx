@@ -31,7 +31,7 @@ const Hero = () => {
         let i = 0;
         const updateWord = () => {
             setDisplayedText(words[i]);
-            i = (i + 1) % words.length; //to create an infinite loop. When is at the end, it resets to 0
+            i = (i + 1) % words.length; //to create an infinite loop. When it's at the end, it resets to 0
         };
 
         // Immediately show first word

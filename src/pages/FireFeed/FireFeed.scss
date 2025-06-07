@@ -3,26 +3,60 @@
 @use "../../styles/partials/_mixins.scss" as *;
 
 .firefeed {
+    transition: all 2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__subheader {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        animation: fadeOut 12s ease forwards;
+        margin-top: 4rem;
+        @include desktop {
+            font-size: 1.5rem;
+        }
+    }
+    &__subheader-italic {
+        font-style: italic;
+        color: $calm-flame;
+    }
     &__floating {
         z-index: 1;
         position: absolute;
         left: 50%;
         top: 80%;
-        // transform: translate(-50%, 0);
+        max-width: 50%;
+        width: auto;
+        transform: translate(-50%, 0);
         animation: floatUp 3s forwards;
         background: rgba(255,255,255,0.8);
         padding: 1rem 2rem;
         border-radius: 1rem;
         font-size: 1.2rem;
-        color: #333;
+        color: $calm-black;
+        word-break: break-word;
+        overflow-wrap: break-word; 
+        box-sizing: border-box;
+        @include tablet{
+            top: 100%;
+        }
     }
     &__form {
         margin: 1rem;
+        width: 90%;
         display: flex;
         flex-direction: column;
         align-items: end;
         border-radius: 1rem;
-        & textarea {
+        @include tablet {
+            width: 85%;
+        }
+        @include desktop {
+            width: 60%;
+        }
+        &-textarea {
             font-family: inherit;
             box-sizing: border-box;
             padding: 0.5rem;
@@ -32,39 +66,54 @@
             bottom: 0px;
             font-size: 1rem;
             resize: none;
-            border: 2px solid $calm-semiblack;
+            // background-color: $calm-body;
+            border: 2px solid white;
             border-radius: 1rem;
-            transition: all 1s ease;
+            transition: all 2s ease;
+            @include tablet {
+                font-size: 1.2rem;
+            }
+            @include desktop {
+                font-size: 1.25rem;
+            }
             &:focus-visible {
                 outline-width: 0;
             }
             &:focus {
                 border: 2px solid $calm-flame;
-                // background-color: white;
+                filter: drop-shadow(0 0 1.5rem $calm-flame-accent);
+                background-color: white;
             }
         }
-        & button {
+        &-btn {
             font-size: 1rem;
             padding: 0.75rem 1rem;
             color: $calm-flame;
             background-color: $calm-flame-secondary;
-            box-shadow: 0 0 0.1rem;
-            border: none;
-            border-radius: 1rem;
+            // box-shadow: 0 0 0.1rem;
+            border: 2px solid $calm-flame-dull;
+            position: relative;
+            bottom: -10rem;
+            border-radius: 1rem 0;
             cursor: pointer;
-            transition: all 1s ease;
+            transition: all 2s ease;
             z-index: 1;
             @include tablet {
                 padding: 1rem 1.3rem;
-                border-radius: 1.5rem;
+                // border-radius: 1.5rem;
                 font-size: 1.2rem;
             }
             &:hover {
                 background-color: $calm-flame;
                 color: $calm-main;
                 box-shadow: 0 0 0.1rem;
+                border: 2px solid $calm-flame;
+                opacity: 1;
             }
-    }
+        }
+        &-btn--disappear { //to make user input easily visible
+            opacity: 0.2;
+        }
     }
     &__response {
         font-size: 1rem;
@@ -74,7 +123,15 @@
         display: flex;
         justify-content: center;
         width: 100%;
-        transition: all 2.5s ease;
+        transition: all 3s ease;
+        bottom: 12rem;
+        filter: drop-shadow(0 0 1.5rem $calm-flame-accent);
+        @include tablet {
+            bottom: 2rem;
+        }
+        @include desktop {
+            bottom: -1rem;
+        }
         &--active {
             opacity: 1;
             animation: fadeOut 4s ease forwards;
@@ -88,6 +145,14 @@
         display: flex;
         justify-content: center;
         width: 100%;
+        bottom: 12rem;
+        filter: drop-shadow(0 0 1.5rem $calm-flame-accent);
         animation: fadeIn 2s ease, fadeOut 6s ease 2s forwards;
+        @include tablet {
+            bottom: 4rem;
+        }
+        @include desktop {
+            bottom: -1rem;
+        }
     }
 }

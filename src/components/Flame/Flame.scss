@@ -2,13 +2,52 @@
 @use "../../styles/partials/variables.scss" as *;
 @use "../../styles/partials/mixins" as *;
 
+// .flame {
+//   display: inline-block;
+//   animation: flicker 1.5s infinite ease-in-out;
+//   transform-origin: center;
+// }
+
+// .flame-container {
+//   height: 33rem; //for mobile
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   position: relative;
+//   z-index: -1; // if/when flame scales to max. To prevent from covering interactive components
+//   @include tablet {
+//     height: 37rem;
+//   }
+//   @include desktop {
+//     height: 40rem;
+//   }
+// }
+
 .flame {
   display: inline-block;
   animation: flicker 1.5s infinite ease-in-out;
   transform-origin: center;
+  max-width: 100%;
+  max-height: 100%;
+  filter: drop-shadow(0 0 3rem $calm-flame-accent);
 }
 
 .flame-container {
-  // margin-bottom: 6rem;
-  height: 33rem; //for mobile
+  height: 33rem;
+  width: 33rem;
+  overflow: hidden; //prevent scaled flame from impeding on other elements
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: -1;
+  transition: all 2s ease-out;
+  @include tablet {
+    height: 37rem;
+    width: 37rem;
+  }
+  @include desktop {
+    height: 40rem;
+    width: 40rem;
+  }
 }
