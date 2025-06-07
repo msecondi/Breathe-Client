@@ -4,13 +4,16 @@
 
 .firefeed {
     transition: all 2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     &__subheader {
         position: absolute;
         display: flex;
         justify-content: center;
         width: 100%;
         animation: fadeOut 10s ease forwards;
-        margin-top: 2rem;
+        margin-top: 4rem;
     }
     &__subheader-italic {
         font-style: italic;
@@ -31,10 +34,17 @@
     }
     &__form {
         margin: 1rem;
+        width: 90%;
         display: flex;
         flex-direction: column;
         align-items: end;
         border-radius: 1rem;
+        @include tablet {
+            width: 85%;
+        }
+        @include desktop {
+            width: 60%;
+        }
         &-textarea {
             font-family: inherit;
             box-sizing: border-box;
@@ -45,15 +55,23 @@
             bottom: 0px;
             font-size: 1rem;
             resize: none;
+            background-color: $calm-body;
             border: 2px solid $calm-semiblack;
             border-radius: 1rem;
             transition: all 2s ease;
+            @include tablet {
+                font-size: 1.2rem;
+            }
+            @include desktop {
+                font-size: 1.25rem;
+            }
             &:focus-visible {
                 outline-width: 0;
             }
             &:focus {
                 border: 2px solid $calm-flame;
-                // background-color: white;
+                filter: drop-shadow(0 0 1.5rem $calm-flame-accent);
+                background-color: white;
             }
         }
         &-btn {
@@ -108,6 +126,14 @@
         display: flex;
         justify-content: center;
         width: 100%;
+        bottom: 12rem;
+        filter: drop-shadow(0 0 1.5rem $calm-flame-accent);
         animation: fadeIn 2s ease, fadeOut 6s ease 2s forwards;
+        @include tablet {
+            bottom: 4rem;
+        }
+        @include desktop {
+            bottom: -1rem;
+        }
     }
 }

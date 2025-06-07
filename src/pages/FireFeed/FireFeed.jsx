@@ -22,8 +22,6 @@ const FireFeed = () => {
     const [responseMessage, setResponseMessage] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
 
-    const [subheader, setSubheader] = useState('what would you like to let go of today?');
-
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -35,7 +33,6 @@ const FireFeed = () => {
             }, 8000);
             return;
         }
-        // e.target.reset(); 
         try {
             // Send the reflection to the backend
             const response = await axios.post(`${baseURL}/fire-feed`, { message: reflection });
@@ -45,7 +42,6 @@ const FireFeed = () => {
 
             // Trigger floating animation
             setFloating(true);
-            e.target.reset();
             setTimeout(() => {
                 setFloating(false);
                 setReflection(''); // Clear the input after submission
@@ -77,15 +73,9 @@ const FireFeed = () => {
         
     }, [floating]); //Re-renders everytime a submission is entered via 'floating'
 
-    useEffect(() => { //on every rerender of page, start timer to 'dissolve' subheader
-        setTimeout(() => {
-           setSubheader('') 
-        }, 10000)
-    },[])
-
     return (
         <section className="firefeed">
-            <h4 className="firefeed__subheader"><span>allow yourself to <span className="firefeed__subheader-italic">feel</span>  then let go</span></h4>
+            <h4 className="firefeed__subheader"><span>allow yourself to <span className="firefeed__subheader-italic">feel</span>  then <span className="firefeed__subheader-italic">let go</span></span></h4>
             <Flame countMultiplier={countMultiplier} />
             {errorMessage && (
                 <div className="firefeed__error">
@@ -107,11 +97,17 @@ const FireFeed = () => {
                     className="firefeed__form-textarea"
                     name="firefeed__textarea"
                     type="text"
-                    placeholder="there’s space here for what has yet to be expressed..."
+                    placeholder="there’s space here for what's on your mind..."
                     value={reflection}
                     onChange={(e) => setReflection(e.target.value)}
                     onFocus={() => setIsFormFocused(true)}
                     onBlur={() => setIsFormFocused(false)}
+                    onKeyDown={(e) => { //allow the user to also press enter to submit
+                        if(e.key === 'Enter' && !e.shiftKey) {
+                            e.preventDefault();
+                            handleSubmit(e);
+                        }
+                    }}
                 />
             </form>
         </section>

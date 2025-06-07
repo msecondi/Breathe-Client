@@ -84,7 +84,9 @@ a {
     position: absolute;
     top: 4.2rem;
     opacity: 0;
-    transition: height 2s ease, width 2s ease, opacity 2s ease;
+    // background-color: white;
+    transition: height 2s ease, width 2s ease, opacity 2s ease, background-color 2s ease;
+    // transition: all 2s ease;
     @include tablet {
         top: 6rem;
     }
