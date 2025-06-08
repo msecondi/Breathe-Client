@@ -2,27 +2,6 @@
 @use "../../styles/partials/variables.scss" as *;
 @use "../../styles/partials/mixins" as *;
 
-// .flame {
-//   display: inline-block;
-//   animation: flicker 1.5s infinite ease-in-out;
-//   transform-origin: center;
-// }
-
-// .flame-container {
-//   height: 33rem; //for mobile
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   position: relative;
-//   z-index: -1; // if/when flame scales to max. To prevent from covering interactive components
-//   @include tablet {
-//     height: 37rem;
-//   }
-//   @include desktop {
-//     height: 40rem;
-//   }
-// }
-
 .flame {
   display: inline-block;
   animation: flicker 1.5s infinite ease-in-out;

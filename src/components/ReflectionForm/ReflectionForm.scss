@@ -14,12 +14,9 @@
         margin: 3rem 14rem;
     }
     & label {
-        // font-family: "AlbertSans";
         font-size: 1rem;
-        // margin-bottom: 1rem;
         @include tablet {
             font-size: 1.3rem;
-            // margin-bottom: 0.5rem;
         }
         @include desktop {
             font-size: 22px;
@@ -96,7 +93,6 @@
         @include tablet {
             margin-bottom: 2rem;
             height: 14rem;
-            // border-radius: 12px;
         }
         @include desktop {
             font-size: 1.25rem;
@@ -118,7 +114,6 @@
         align-items: flex-start;
         @include tablet {
             align-items: center;
-            // justify-content: center;
         }
     }
     &__checkbox {

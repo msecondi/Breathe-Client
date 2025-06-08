@@ -26,14 +26,19 @@ const ReflectionForm = () => {
             else if (!event.target.reflectionName.value && !event.target.reflectionText.value) {
                 setErrorMessage('No information inputted. Please try again')
             }
-            else { //name entered, capture it
+            else if ((event.target.reflectionName.value).trim() === ''){ // anonymous not selected but name is blank
+                const status = await axios.post(`${baseURL}/reflections`, {
+                    message: event.target.reflectionText.value
+                });
+                setErrorMessage('');
+                console.log(status)
+            }
+            else { //name entered, capture & send in post req
                 const status = await axios.post(`${baseURL}/reflections`, {
                     name: event.target.reflectionName.value,
                     message: event.target.reflectionText.value
                 });
                 setErrorMessage('');
-                // setStatusMessage(status.data);
-                console.log(status)
             }
         } catch(error) {
             if (error.response && error.response.data) {

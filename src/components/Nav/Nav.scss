@@ -84,21 +84,14 @@ a {
 .current-page {
     width: 0.3rem;
     height: 0.3rem;
-    // width: 2.5rem;
-    // height: 0.1rem;
     border-radius: 3rem;
     position: absolute;
     top: 4.1rem;
     opacity: 0;
-    // background-color: white;
     transition: height 2s ease, width 2s ease, opacity 2s ease, background-color 2s ease;
-    // transition: all 2s ease;
     @include tablet {
         top: 6.9rem;
     }
-    // @include desktop {
-    //     top: 6.9rem;
-    // }
     &--active-home {
         background-color: $calm-accent;
         opacity: 1;
