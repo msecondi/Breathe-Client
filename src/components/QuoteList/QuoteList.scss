@@ -8,10 +8,12 @@
     flex-flow: row wrap;
     @include tablet {
       flex-direction: column;
-
+      
       > *:nth-child(odd) {
         align-self: flex-start;
         border-radius:  2rem 2rem 2rem 0;
+        border-left: none;
+        border-right: 2px solid $calm-accent;
       }
 
       > *:nth-child(even) {

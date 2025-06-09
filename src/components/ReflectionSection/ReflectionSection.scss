@@ -1,0 +1,67 @@
+@use "../../styles/styles.scss" as *;
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/mixins" as *;
+
+.reflection-section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+    margin-top: 4rem;
+    color: $calm-black;
+    background-color: $calm-main;
+    @include desktop {
+        padding-bottom: 10rem;
+    }
+    &__header {
+        text-align: center;
+        padding: 4rem;
+        border-bottom: 1px solid black;
+        margin-top: 0;
+            margin-bottom: 4rem;
+        @include tablet {
+            padding: 8rem;
+            margin-top: 0;
+            margin-bottom: 4rem;
+        }
+    }
+    &__sub-header {
+        margin: 0;
+        text-align: center;
+        width: 70%;
+        font-weight: 400;
+        @include tablet {
+            margin-top: 4rem;
+        }
+    }
+    span {
+        font-style: italic;
+        color: $calm-accent;
+    }
+    &__list {
+        overflow: hidden;
+        max-height: 60rem;
+        transition: max-height 26s ease-out;
+        @include tablet {
+            width: 90%;
+            max-height: 70rem;
+        }
+        @include desktop {
+            width: 60%;
+        }
+        &--hidden {
+            max-height: 0;
+        }
+    }
+    &__form {
+        overflow: hidden;
+        transition: all 10s ease;
+        max-height: 50rem;
+        opacity: 1;
+    }
+    &__form--hidden {
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+    }
+}

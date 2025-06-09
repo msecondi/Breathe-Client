@@ -1,7 +1,7 @@
 import Hero from "../../components/Hero/Hero.jsx";
 import InspireMeBtn from "../../components/InspireMeBtn/InspireMeBtn.jsx";
 import QuoteList from "../../components/QuoteList/QuoteList.jsx";
-import Reflection from "../../components/Reflection/Reflection.jsx";
+import ReflectionSection from "../../components/ReflectionSection/ReflectionSection.jsx";
 
 import { useState, useEffect, useRef } from "react";
 import { useOutletContext } from "react-router-dom";
@@ -33,7 +33,7 @@ const Home = () => {
             <QuoteList scrollToRef={scrollToRef} isActive={isActive}/>
             
             {/*  Reflection form - "what does being human mean to you?" Which then reveals any and all comments already posted (including default) */}
-            <Reflection />
+            <ReflectionSection />
 
             {/* Footer with contact info? */}
         </>

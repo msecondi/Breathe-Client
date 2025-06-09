@@ -1,0 +1,60 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.reflection__list {
+    &-container {
+        margin-bottom: 2rem;
+    }
+    &-user {
+        opacity: 0;
+        transition: all 3s ease;
+        animation: fadeIn 4s ease 1s forwards;
+        margin: 2rem 1rem;
+        // margin-bottom: 4rem;
+        background-color: white;
+        padding: 1rem;
+        border-radius: 1rem;
+        filter: drop-shadow(0 0 0.2rem $calm-accent);
+        @include tablet {
+            padding: 1.3rem;
+        }
+        @include desktop {
+            margin: 3rem 1rem 6rem;
+        }
+        &:hover {
+            filter: drop-shadow(0 0 0.5rem $calm-accent);
+        }
+    }
+
+    &-user--hidden{
+        opacity: 0;
+    }
+    &-ai {
+        opacity: 0;
+        border-radius: 1rem;
+        animation: fadeIn 4s ease 6s forwards;
+        color: $calm-semiblack;
+        transition: all 3s ease;
+        margin: 1rem;
+        padding: 1rem;
+        @include tablet {
+            padding: 1.3rem;
+        }
+        & .indiv-reflection__message {
+            text-align: justify;
+        }
+        &:hover {
+            color: black;
+            background-color: white;
+            box-shadow: 0 0 0.5rem black;
+        }
+    }
+    &-ai--hidden {
+        opacity: 0;
+    }
+    &-title {
+        font-weight: 400;
+        text-align: center;
+        margin-top: 0;
+    }
+}

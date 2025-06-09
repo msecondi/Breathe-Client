@@ -1,39 +1,35 @@
 @use "../../styles/styles.scss" as *;
 @use "../../styles/partials/variables.scss" as *;
 @use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
 
-.reflection {
+.indiv-reflection {
     display: flex;
-    align-items: center;
     flex-direction: column;
-    padding: 2rem;
-    margin-top: 4rem;
-    color: $calm-black;
-    background-color: $calm-main;
-    @include desktop {
-        padding-bottom: 10rem;
-    }
-    &__header {
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 4s ease 2s forwards;
+    max-width: 100%;
+    &__message {
         text-align: center;
-        padding: 4rem;
-        border-bottom: 1px solid black;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        word-break: break-word;
         @include tablet {
-            padding: 8rem;
-            margin-top: 0;
-            margin-bottom: 4rem;
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+        @include desktop {
+            font-size: 1.75rem;
         }
     }
-    &__sub-header {
-        margin: 2rem 0 0;
-        text-align: center;
-        width: 70%;
-        font-weight: 400;
-        @include tablet {
-            margin-top: 4rem;
-        }
-    }
-    span {
+    &__name {
         font-style: italic;
-        color: $calm-accent;
+        width: 100%;
+        text-align: right;
+        margin-right: 2rem;
+        @include tablet {
+            line-height: 2rem;
+        }
     }
 }

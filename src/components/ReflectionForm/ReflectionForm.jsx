@@ -5,7 +5,7 @@ import axios from "axios";
 
 const baseURL = import.meta.env.VITE_BACKEND_URL || "http://localhost:8080";
 
-const ReflectionForm = () => {
+const ReflectionForm = ({setHasSubmitted}) => {
     const [errorMessage, setErrorMessage] = useState('');
     const [isReflectionFocused, setIsReflectionFocused] = useState(false); // for overall feel and user focus
     const [reflectionName, setReflectionName] = useState(''); // for name input
@@ -19,18 +19,20 @@ const ReflectionForm = () => {
             if(anonymous && !event.target.reflectionName.value && event.target.reflectionText.value) {
                 const status = await axios.post(`${baseURL}/reflections`, {message: event.target.reflectionText.value});
                 setErrorMessage('');
-                // setStatusMessage(status.data);
+                setHasSubmitted(true); //prop
                 console.log(status)
             }
             //no info, set error message
             else if (!event.target.reflectionName.value && !event.target.reflectionText.value) {
                 setErrorMessage('No information inputted. Please try again')
+                setHasSubmitted(false); //prop
             }
             else if ((event.target.reflectionName.value).trim() === ''){ // anonymous not selected but name is blank
                 const status = await axios.post(`${baseURL}/reflections`, {
                     message: event.target.reflectionText.value
                 });
                 setErrorMessage('');
+                setHasSubmitted(true); //prop
                 console.log(status)
             }
             else { //name entered, capture & send in post req
@@ -39,13 +41,16 @@ const ReflectionForm = () => {
                     message: event.target.reflectionText.value
                 });
                 setErrorMessage('');
+                setReflectionName('');
+                setHasSubmitted(true); //prop
             }
         } catch(error) {
             if (error.response && error.response.data) {
-                // setErrorMessage(error.response.data.message);
                 setErrorMessage("Please check all entered data and try again.");
+                setHasSubmitted(false); //prop
             } else {
                 setErrorMessage("Please check all entered data and try again.");
+                setHasSubmitted(false); //prop
             }
         }
         event.target.reset();
@@ -63,7 +68,7 @@ const ReflectionForm = () => {
     }
 
     useEffect(() => {
-        if(!anonymous && isReflectionFocused) {
+        if(!anonymous && isReflectionFocused && !reflectionName) {
             const timeout = setTimeout(() => {
                 setIsReflectionFocused(true);
                 setAnonymous(true);
@@ -81,7 +86,7 @@ const ReflectionForm = () => {
                             name="reflectionText"
                             onFocus={() => { setIsReflectionFocused(true); }}
                             onBlur={() => setIsReflectionFocused(false)}
-                            placeholder="it can be as long or as short as you like"
+                            placeholder="there's no right length, just what's true to you"
                             required
                         >
                         </textarea>

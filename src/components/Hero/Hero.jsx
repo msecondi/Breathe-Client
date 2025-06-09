@@ -5,25 +5,28 @@ import { useEffect, useState } from "react";
 const Hero = () => {
 
     const words = [
-        'connection', 
-        'genuity', 
+        'presence',
         'patience',
-        'openness', 
-        'belonging', 
-        'calm',
-        'listening', 
-        'presence', 
-        'honesty', 
-        'feeling', 
-        'reflection',
+        'feeling',
+        'awareness',
+        'emotion',
         'vulnerability',
+        'honesty',
+        'authenticity',
+        'openness',
+        'listening',
+        'kindness',
         'compassion',
         'empathy',
-        'kindness',
+        'connection',
+        'belonging',
+        'humility',
         'curiosity',
         'gratitude',
         'resilience',
+        'peace'
     ];
+
 
     const [displayedText, setDisplayedText] = useState('');
 
