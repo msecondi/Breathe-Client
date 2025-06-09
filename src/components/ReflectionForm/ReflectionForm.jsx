@@ -20,7 +20,6 @@ const ReflectionForm = ({setHasSubmitted}) => {
                 const status = await axios.post(`${baseURL}/reflections`, {message: event.target.reflectionText.value});
                 setErrorMessage('');
                 setHasSubmitted(true); //prop
-                console.log(status)
             }
             //no info, set error message
             else if (!event.target.reflectionName.value && !event.target.reflectionText.value) {
@@ -33,7 +32,6 @@ const ReflectionForm = ({setHasSubmitted}) => {
                 });
                 setErrorMessage('');
                 setHasSubmitted(true); //prop
-                console.log(status)
             }
             else { //name entered, capture & send in post req
                 const status = await axios.post(`${baseURL}/reflections`, {
@@ -45,13 +43,8 @@ const ReflectionForm = ({setHasSubmitted}) => {
                 setHasSubmitted(true); //prop
             }
         } catch(error) {
-            if (error.response && error.response.data) {
-                setErrorMessage("Please check all entered data and try again.");
-                setHasSubmitted(false); //prop
-            } else {
-                setErrorMessage("Please check all entered data and try again.");
-                setHasSubmitted(false); //prop
-            }
+            setErrorMessage("Please check all entered data and try again.");
+            setHasSubmitted(false); //prop
         }
         event.target.reset();
     }
@@ -59,7 +52,6 @@ const ReflectionForm = ({setHasSubmitted}) => {
     const handleAnonymousChange = (event) => {
         setAnonymous(event.target.checked);
         if (event.target.checked) {
-            console.log(reflectionName)
             setReflectionName(''); // Clear the name field when anonymous is checked
             setIsReflectionFocused(true); // Focus on the reflection textarea when anonymous is checked
         } else {

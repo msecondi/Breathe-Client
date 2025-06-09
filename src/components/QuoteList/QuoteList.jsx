@@ -16,10 +16,9 @@ const QuoteList = ({isActive, scrollToRef}) => {
     const fetchQuotes = async () => {
         try {
             const response = await axios.get(`${baseURL}/quotes`);
-            console.log(response.data)
             setQuotes(response.data);
         } catch (error) {
-            console.log(`Could not load quotes: ${error}`);
+            console.error(`Could not load quotes: ${error}`);
         }
     }
 
