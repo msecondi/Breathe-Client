@@ -3,7 +3,7 @@
 
 ## Overview
 
-**Breathe** is a calming, human-centered platform that draws attention to the modern epidemic of loneliness and disconnection. It offers an interactive, reflective space for users to slow down, process their emotions, and reconnect with what it means to be human. Whether through anonymous emotional release, reflective journaling, or absorbing meaningful quotes and stories, the platform serves as a gentle reminder that humanity still exists—and we can still find it within ourselves and one another.
+**Breathe** is a calming, human-centered platform that draws attention to the modern epidemic of loneliness and disconnection. It offers an interactive, reflective space for users to slow down, process their emotions, and reconnect with what it means to be human. Whether through anonymous emotional release, reflective journaling, or absorbing meaningful quotes and stories, the platform serves as a gentle reminder that humanity still exists and we can still find it within ourselves and one another.
 
 ## Problem Space
 
@@ -29,13 +29,13 @@ This app will be mindful of the sensitive nature of mental health. It will inclu
   - Blurb about being human
   - Prompt: “What does being human mean to you?” + public feed of responses
 
-- **Establish Problem Area Page**
+- **Fire Feed Page**
+  - Symbolic fire for anonymous emotional releases
+  - Submissions fuel the fire which grows daily
+
+- **Establish Problem Area Page - _Future Update_**
   - Display articles, videos, and general information about the epidemic of disconnection
   - Mental health resources and the danger of unchecked distractions
-
-- **Introspective Page**
-  - Symbolic fire for anonymous emotional releases
-  - Submissions fuel the fire which grows daily/weekly
 
 ## Implementation
 
@@ -54,12 +54,13 @@ This app will be mindful of the sensitive nature of mental health. It will inclu
 ### Sitemap
 
 - Landing Page
-- Establish the Problem Page
-- Introspective Page
+- Fire Feed Page
+- Establish the Problem Page (to be added in a future update)
+- Mood Page (to be added in a future update)
 
 ### Mockups
 
-_To be added during design phase._
+_None_
 
 ### Data Structure
 
@@ -92,7 +93,7 @@ _To be added during design phase._
 
 ## Roadmap
 
-### Phase 1 – MVP (Demo Day Ready)
+### Phase 1 – MVP (Demo Day Ready) *Complete*
 
 **Backend**
 - Set up Express server + MySQL via Knex
@@ -106,9 +107,9 @@ _To be added during design phase._
 **Frontend**
 - React setup with Axios
 - Landing Page: hero banner, quotes, reflection form and feed
-- Introspection Page: fire animation, anonymous input, real-time counter
+- Fire Feed Page: fire animation, anonymous input, real-time counter
 
-### Phase 2 – Feature Enhancement
+### Phase 2 – Feature Enhancement *Ongoing*
 
 **Backend**
 - Add tables: `articles`, `videos`, `resources`

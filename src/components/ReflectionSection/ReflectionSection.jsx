@@ -15,7 +15,6 @@ const ReflectionSection = () => {
     const fetchReflections = async () => {
         const response = await axios.get(`${baseURL}/reflections`)
         setReflections(response.data);
-        console.log(response.data);
     }
     useEffect(() => {
         fetchReflections();

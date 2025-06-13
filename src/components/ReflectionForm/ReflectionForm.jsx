@@ -64,7 +64,7 @@ const ReflectionForm = ({setHasSubmitted}) => {
             const timeout = setTimeout(() => {
                 setIsReflectionFocused(true);
                 setAnonymous(true);
-            }, 8000); // 8 seconds before the name field disappears
+            }, 6000); // 6 seconds before the name field disappears
             return () => clearTimeout(timeout); // Cleanup the timeout on unmount or when name changes
         }
     }, [anonymous, isReflectionFocused]);
@@ -91,7 +91,7 @@ const ReflectionForm = ({setHasSubmitted}) => {
                                 name="anonymous" 
                                 className="form__checkbox" 
                                 checked={anonymous}
-                                onClick={handleAnonymousChange}
+                                onChange={handleAnonymousChange}
                             />
                             <label htmlFor="anonymous">anonymous</label>
                         </div>
