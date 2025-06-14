@@ -1,0 +1,24 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.not-found{
+    overflow: auto;
+    &__info {
+        text-align: center;
+        padding: 4rem;
+        font-size: 1rem;
+        line-height: normal;
+        @include tablet {
+            padding: 6rem 2rem;
+            font-size: 1.5rem;
+        }
+        @include desktop {
+            font-size: 2rem;
+        }
+    }
+
+    & span {
+        color: $calm-accent;
+        font-style: italic;
+    }
+}

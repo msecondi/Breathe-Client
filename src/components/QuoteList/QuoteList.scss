@@ -41,3 +41,18 @@
     }
 }
 
+#loading {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 1rem;
+  font-style: italic;
+  padding: 1rem;
+  @include tablet {
+    font-size: 1.5rem
+  }
+  @include desktop {
+    font-size: 2rem;
+    padding: 2rem;
+  }
+}

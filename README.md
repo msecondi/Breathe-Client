@@ -26,7 +26,6 @@ This app will be mindful of the sensitive nature of mental health. It will inclu
 - **Landing Page**
   - Rotating hero banner with words like “Genuity,” “Feeling,” “Honesty,” “Connection”
   - Inspirational quotes
-  - Blurb about being human
   - Prompt: “What does being human mean to you?” + public feed of responses
 
 - **Fire Feed Page**

@@ -9,7 +9,7 @@
     margin: 1rem;
     z-index: 1;
     @include tablet {
-        margin: 3rem 1.5rem 1.5rem;
+        margin: 2rem 1.5rem 1.5rem;
     }
     @include desktop {
         margin: 3rem 14rem;
@@ -30,7 +30,7 @@
         font-size: 1rem;
         padding: 0 1rem;
         margin-bottom: 1rem;
-        border: 2px solid $calm-semiblack;
+        border: 2px solid $calm-body;
         border-radius: 1rem;
         background-color: $calm-body;
         height: 3rem;
@@ -59,10 +59,13 @@
     &__container {
         display: flex;
         flex-direction: column;
-        width: 20rem;
+        width: 25rem;
         transition: all 2s ease;
         @include tablet {
-            width: 25rem;
+            width: 30rem;
+        }
+        @include desktop {
+            width: 42rem;
         }
     }
 
@@ -86,11 +89,11 @@
         padding: 0.5rem;
         height: 10rem;
         resize: none;
-        border: 2px solid $calm-semiblack;
+        border: 2px solid $calm-body;
         border-radius: 1rem;
         background-color: $calm-body;
         margin-bottom: 2rem;
-        transition: all 1s ease;
+        transition: all 2s ease;
         @include tablet {
             margin-bottom: 2rem;
             font-size: 1.15rem;
@@ -98,6 +101,7 @@
         }
         @include desktop {
             font-size: 1.25rem;
+            margin-bottom: 3rem;
         }
     }
     &__reflection:focus-visible {
@@ -106,6 +110,7 @@
     &__reflection:focus {
         border: 2px solid $calm-accent;
         background-color: white;
+        box-shadow: 0 0 1rem $calm-accent;
     }
     &__reflection--invalid {
         border: 2px solid red;

@@ -34,7 +34,7 @@ const QuoteList = ({isActive, scrollToRef}) => {
                         quotes.map(quote => (
                             <Quote quote={quote} key={quote.id}/>
                         )) :
-                        <div>loading inspiration...</div>}
+                        <div id="loading">loading inspiration...</div>}
                 </section>
             </div>
         </>
