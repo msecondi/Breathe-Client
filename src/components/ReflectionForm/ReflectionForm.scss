@@ -43,6 +43,7 @@
     }
     &__name:focus-visible {
         outline-width: 0;
+        outline: none;
     }
     &__name:focus {
         border: 2px solid $calm-accent;
@@ -106,6 +107,7 @@
     }
     &__reflection:focus-visible {
         outline-width: 0;
+        outline: none;
     }
     &__reflection:focus {
         border: 2px solid $calm-accent;
