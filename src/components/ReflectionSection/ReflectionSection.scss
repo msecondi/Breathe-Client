@@ -64,4 +64,15 @@
         max-height: 0;
         overflow: hidden;
     }
+    & .status--error {
+    display: flex;
+    justify-content: center;
+    color: $calm-flame;
+    margin-bottom: 2rem;
+    font-style: normal;
+    border: 1px solid;
+    padding: 1rem;
+    border-radius: 1rem;
+    transition: 1s all ease;
+}
 }
